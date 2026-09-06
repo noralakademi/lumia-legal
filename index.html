@@ -88,7 +88,20 @@
             }
             client.auth.updateUser({ password: s1 }).then(function (sonuc) {
               if (sonuc.error) {
-                hata.textContent = 'Şifre güncellenemedi — bağlantının süresi dolmuş olabilir. Uygulamadan sıfırlama e-postasını tekrar iste.';
+                // GoTrue'nun belgeli, kararlı hata kodu sözleşmesi
+                // (bkz. hello_lumia'daki authHatasiSinifla ile AYNI ilke) —
+                // bu ikisi hassas bir bilgi SIZDIRMAZ, somut/eyleme
+                // çevrilebilir bir mesajı hak eder; başka her şeyde (ör.
+                // gerçekten süresi dolmuş/kullanılmış bağlantı) söylenecek
+                // daha spesifik bir şey yoktur, jenerik mesaj kalır.
+                var kod = sonuc.error.code;
+                if (kod === 'same_password') {
+                  hata.textContent = 'Yeni şifre eskisiyle aynı olamaz — farklı bir şifre seç.';
+                } else if (kod === 'weak_password') {
+                  hata.textContent = 'Bu şifre çok zayıf — daha uzun/farklı bir şifre dene.';
+                } else {
+                  hata.textContent = 'Şifre güncellenemedi — bağlantının süresi dolmuş olabilir. Uygulamadan sıfırlama e-postasını tekrar iste.';
+                }
                 hata.style.display = 'block';
                 return;
               }
