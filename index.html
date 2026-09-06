@@ -33,24 +33,43 @@
     <script>
       // FS-E1/E2 §6.4/E-D5 — bu sayfa GoTrue'nun ÜÇ farklı e-posta akışının
       // (signup onayı, e-posta değişikliği onayı, şifre sıfırlama) ORTAK
-      // yönlendirme hedefidir. Supabase JS SDK'sı URL'deki jetonu (hash
-      // fragment ya da PKCE `code` — hangisi olursa olsun) kendisi çözer;
-      // yalnız ŞİFRE SIFIRLAMA akışında `onAuthStateChange` bir
-      // `PASSWORD_RECOVERY` olayı yayınlar — diğer İKİ akışta (signup/
-      // email-change onayı) bu olay HİÇ gelmez, sayfa BUGÜNKÜ "Doğrulandı"
-      // görünümünde kalır (additive, regresyon yok).
+      // yönlendirme hedefidir.
+      //
+      // ⚠️ GERÇEK bir bug düzeltmesi (canlı test, 2026-09-06) — İLK sürüm
+      // burada `onAuthStateChange`'in `PASSWORD_RECOVERY` olayını dinliyordu
+      // ("Supabase SDK'sı URL'deki jetonu kendisi çözer" varsayımıyla), ama
+      // bu proje PKCE akışını kullanıyor (yönlendirme URL'i `#access_token`
+      // yerine `?code=...`) — supabase-js'in KENDİ kaynak kodunda
+      // (`GoTrueClient.ts`, `_getSessionFromURL`) PKCE dalı `redirectType`i
+      // HER ZAMAN `null` döndürüyor (yalnız implicit/hash akışında gerçek
+      // `type` propagate edilir) — yani PKCE'de `PASSWORD_RECOVERY` ASLA
+      // ateşlenmiyor, sessizce `SIGNED_IN`e düşüyor. **Düzeltme:** GoTrue'nun
+      // kendi `ConfirmationURL`/`code` yönlendirme dansına HİÇ girmiyoruz —
+      // e-posta şablonu artık doğrudan bu sayfaya `token_hash`+`type=
+      // recovery` ile linkliyor (bkz. `docs/email-templates/lumia-email-
+      // reset-password.html`), biz de `verifyOtp({type, token_hash})`'i
+      // KENDİMİZ çağırıp AÇIKÇA "bu bir kurtarma" olduğunu biliyoruz — hiçbir
+      // olay dinlemeye/tahmine gerek yok. Diğer İKİ akış (signup/e-posta
+      // onayı) hâlâ `{{ .ConfirmationURL }}` kullanıyor, DOKUNULMADI — sayfa
+      // onlarda BUGÜNKÜ "Doğrulandı" görünümünde kalır (additive).
       (function () {
         try {
           var client = supabase.createClient(
             'https://bvjsmutsyqpkvxpukzwo.supabase.co',
             'sb_publishable_r9vRoVDHaHm4okh4kO05-A_vfPfRe1o'
           );
-          client.auth.onAuthStateChange(function (event) {
-            if (event === 'PASSWORD_RECOVERY') {
+          var params = new URLSearchParams(window.location.search);
+          var tokenHash = params.get('token_hash');
+          var type = params.get('type');
+          if (tokenHash && type === 'recovery') {
+            client.auth.verifyOtp({ type: 'recovery', token_hash: tokenHash }).then(function (sonuc) {
+              if (sonuc.error) return;
               document.getElementById('onaylandi').style.display = 'none';
               document.getElementById('sifreFormu').style.display = 'block';
-            }
-          });
+              var temizUrl = window.location.pathname;
+              window.history.replaceState(window.history.state, '', temizUrl);
+            });
+          }
           document.getElementById('form').addEventListener('submit', function (e) {
             e.preventDefault();
             var s1 = document.getElementById('sifre1').value;
