@@ -4,14 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index,follow">
 <!-- ÜRETİLMİŞ DOSYA — ELLE DÜZENLEME.
-     Kaynak: docs/legal/TR/kvkk-aydinlatma-metni.md · profil: dizin=yok
-     Yeniden üret: dart run tool/hukuk_yayinla.dart --dizin=yok -->
+     Kaynak: docs/legal/TR/kvkk-aydinlatma-metni.md · profil: dizin=var
+     Yeniden üret: dart run tool/hukuk_yayinla.dart --dizin=var -->
 <style>
   :root { color-scheme: light dark;
     --kagit:#FBFBF3; --murekkep:#1b2a16; --soluk:#55604f; --cizgi:#e2e6da; }
   @media (prefers-color-scheme: dark) { :root {
     --kagit:#14180f; --murekkep:#eef1e7; --soluk:#a9b3a2; --cizgi:#2b3324; } }
-  body { margin:0 auto; max-width:47rem; padding:2.5rem 1.1rem 5rem;
+  body { margin:0 auto; max-width:46rem; padding:2.5rem 1.1rem 5rem;
     background:var(--kagit); color:var(--murekkep);
     font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     overflow-wrap:break-word; }
@@ -60,7 +60,7 @@
 <h2>2. Hangi verileri işliyoruz?</h2>
 <p>Uygulama <strong>hesap açmadan (anonim olarak) kullanılabilir.</strong> Anonim kullanımda da cihazına bir anonim kullanıcı kimliği atanır.</p>
 <h3>2.0 Önce en önemlisi: verilerin nerede duruyor?</h3>
-<blockquote><p>🔴 <strong>Sağlık kayıtların sunucularımızda tutulmaz; yalnızca cihazında kalır. Sunucuda bulunan tek şey hesabın (e-posta adresin, takma adın, oturum ve güvenlik kayıtların, dil tercihinin bir kopyası) ve rıza kaydındır.</strong></p></blockquote>
+<blockquote><p>🔴 <strong>Semptom, döngü, rejim ve uyku kayıtların sunucuda tutulmaz. Doktor değerlendirmelerin, diğer kadınlarla toplu paylaşılabilmesi için sunucuda tutulur; bireysel yanıtın hiçbir zaman gösterilmez.</strong></p></blockquote>
 <p>Bu ayrımı anlarsan metnin geri kalanı çok daha kolay okunur:</p>
 <table>
 <thead><tr>
@@ -78,12 +78,26 @@
 <td>Sunucuda (bulut)</td>
 <td>E-posta adresin (varsa), kullanıcı kimliğin, şifrenin özeti, oturum bilgilerin ve verdiğin rızaların kaydı</td>
 </tr>
+<tr>
+<td><strong>Doktor değerlendirmelerin</strong></td>
+<td>🔵 <strong>Sunucuda</strong>; bilinçli bir istisna</td>
+<td>Bir doktoru değerlendirirsen: hangi doktor, ziyaret ettiğin ay/yıl ve sekiz maddeye verdiğin yanıtlar (§2.1'in son satırı)</td>
+</tr>
 </tbody></table>
 <p><strong>Bunun pratik anlamı:</strong> semptom kaydettiğinde, ilaç saati işaretlediğinde veya uyku günlüğünü doldurduğunda <strong>bu veri bize ulaşmaz.</strong> Sunucumuzda bir kopyası yoktur; şifreli bile değil, <strong>hiç yoktur.</strong> Uygulamanın takip tarafı bu yüzden <strong>internet olmadan da</strong> çalışır.</p>
+<p><strong>Doktor değerlendirmesi neden istisna; ve neden gizlemiyoruz:</strong> dizinin amacı, kadınların deneyimini <strong>birbirine görünür kılmak.</strong> Bir doktorun sonuçları, en az üç kadının yanıtı <strong>birleştirilerek</strong> hesaplanır; böyle bir hesap yalnızca cihazında duran veriyle yapılamaz. Bu yüzden değerlendirmen <strong>sunucuda tutulur</strong> ve bunu açıkça söylüyoruz. Buna karşılık:</p>
+<ul>
+<li>🔴 <strong>Bireysel yanıtın hiçbir yerde, hiç kimseye gösterilmez</strong>; ne başka kullanıcılara, ne doktora. Dizinde yalnızca <strong>toplu</strong> sonuç görünür.</li>
+<li><strong>Kendi yanıtını yalnızca sen görürsün</strong> ve dilediğin zaman <strong>güncelleyebilir veya silebilirsin.</strong></li>
+<li>Bir maddenin sonucu, <strong>en az üç yanıt</strong> birikmeden hiç gösterilmez ve toplu sonuçlar <strong>anlık değil, haftalık</strong> yenilenir; tek bir yanıtın sonucu değiştirdiği an dışarıdan izlenemesin diye.</li>
+<li><strong>Değerlendirme için hesap gerekir</strong>; anonim kullanımda gönderilemez. Dizine <strong>bakmak</strong> için hesap gerekmez.</li>
+<li>🔴 Değerlendirme kaydında <strong>menopoz evren, semptomların ya da rejimin YER ALMAZ.</strong> Cihazdaki sağlık kayıtların, dizin yüzünden sunucuya <strong>geri taşınmaz.</strong></li>
+<li>Değerlendirmen için <strong>ayrıca açık rızanı</strong> isteriz ve o rızayı geri alırsan <strong>tüm değerlendirmelerin silinir</strong> (§11).</li>
+</ul>
 <p><strong>Rıza kaydını neden sunucuda tutuyoruz:</strong> sağlık verisi işlemek için açık rızanı aldığımızı; ve geri aldığında aldığımızı; <strong>gösterebilmek zorundayız</strong> (KVKK m.6/2). Bu kayıt hangi rızayı, hangi sürümle, ne zaman verdiğinden oluşur; <strong>içinde hiçbir sağlık kaydın yoktur.</strong></p>
 <p>⚠️ <strong>Bunun bir bedeli var ve açıkça söylüyoruz:</strong> telefonunu kaybedersen, değiştirirsen veya uygulamayı silersen <strong>kayıtların da gider</strong>; bizde bir kopyası olmadığı için sana geri veremeyiz. Bu yüzden Uygulama sana <strong>kendi yedeğini alma</strong> yolunu sunuyor (§6).</p>
 <h3>2.1 Özel nitelikli kişisel veri; sağlık verisi</h3>
-<p>KVKK m.6 kapsamında <strong>özel nitelikli</strong> sayılan, yalnızca <strong>açık rızanla</strong> işlediğimiz veriler. 🔴 <strong>Takip kayıtlarının tamamı cihazında tutulur; sunucumuzda hiçbirinin kopyası yoktur</strong>.</p>
+<p>KVKK m.6 kapsamında <strong>özel nitelikli</strong> sayılan, yalnızca <strong>açık rızanla</strong> işlediğimiz veriler. 🔴 <strong>Takip kayıtlarının tamamı cihazında tutulur; sunucumuzda hiçbirinin kopyası yoktur. Tek istisna tablonun son satırıdır (doktor değerlendirmeleri) ve o satır bilerek sunucudadır</strong>. Gerekçesi §2.0'da.</p>
 <table>
 <thead><tr>
 <th>Veri</th>
@@ -130,10 +144,16 @@
 <td>Hangi makaleyi ne kadar okudun, ne zaman</td>
 <td>🟢 Cihazında</td>
 </tr>
+<tr>
+<td>🔵 <strong>Doktor değerlendirmen</strong></td>
+<td>Değerlendirdiğin doktor, <strong>ziyaret ettiğin ay ve yıl</strong>, sekiz maddeye verdiğin yanıtlar (her madde beş kademeli; atlayabilirsin) ve onayladığın rıza metninin sürümü. 🔴 <strong>Serbest metin alanı YOKTUR</strong>; yorum yazamazsın, kimse yazamaz. 🔴 <strong>Evren, semptomların ve rejimin bu kayda YAZILMAZ</strong></td>
+<td>🔵 <strong>Sunucuda</strong> (§2.0'daki istisna)</td>
+</tr>
 </tbody></table>
+<p>⚠️ <strong>Doktor değerlendirmesi neden özel nitelikli sayılıyor:</strong> <em>"şu ay bir kadın hastalıkları ve doğum uzmanına gittim ve hormon tedavisini konuştuk"</em> bilgisi, kendi başına <strong>sağlığına ilişkin bir beyandır.</strong> Bu yüzden onu sıradan bir kullanıcı girdisi gibi değil, <strong>özel nitelikli kişisel veri</strong> gibi ele alıyoruz: ayrı açık rıza, yalnız sana açık erişim (§9), toplu gösterim ve geri alınabilirlik.</p>
 <p>⚠️ <strong>Serbest metin alanları hakkında dürüst bir not:</strong> hatırlatıcı başlığına ve doz notuna <strong>ne yazacağını biz belirleyemeyiz.</strong> Oraya bir teşhis adı, bir doktorun adı ya da başka bir kişiye ait bilgi yazarsan o da kaydedilir. Bu alanlar cihazından çıkmaz; ama yedek aldığında <strong>şifreli olarak</strong> yedeğin içinde yer alır (§6).</p>
 <h3>2.2 Sunucuda tuttuğumuz veriler</h3>
-<p>🔴 <strong>Liste bundan uzun değil; hesabın ve rıza kaydın.</strong></p>
+<p>🔴 <strong>Liste bundan uzun değil; hesabın, rıza kaydın ve (varsa) doktor değerlendirmelerin.</strong></p>
 <table>
 <thead><tr>
 <th>Veri</th>
@@ -175,6 +195,11 @@
 <td>Hangi rıza, hangi sürüm, verildi mi, ne zaman</td>
 <td><strong>Hukuki ispat verisi</strong>; bunu sunucuda tutuyoruz ki rıza verdiğini/geri aldığını gösterebilelim (KVKK m.6/2); hesap silindikten sonraki saklama süresi §8'dedir</td>
 </tr>
+<tr>
+<td>🔵 <strong>Doktor değerlendirmelerin</strong></td>
+<td>§2.1'in son satırındaki kayıt; bir doktoru değerlendirdiğin her seferde <strong>tek</strong> bir kayıt (aynı doktoru tekrar değerlendirirsen mevcut kaydın <strong>güncellenir</strong>, yenisi açılmaz)</td>
+<td>Yalnızca <strong>sen</strong> okuyabilirsin (§9). Dizinde yalnız <strong>toplu</strong> sonuç görünür</td>
+</tr>
 </tbody></table>
 <p><strong>Dizinin kendi kayıtları; bunlar senin verin değildir:</strong> dizin ayrıca <strong>doktor kataloğunu</strong> (unvan, ad-soyad, branş, il/ilçe, kurum bilgileri ve her bilginin <strong>kaynağı + doğrulama tarihi</strong>), <strong>toplu değerlendirme sonuçlarını</strong> (doktor başına madde başına sayılar ve sözel etiket; <strong>hangi yanıtın kime ait olduğu bu kayıtlarda yoktur</strong>), <strong>düzeltme taleplerini</strong> ve <strong>il/ilçe listesini</strong> tutar. Katalog verisi kamuya açık kurumsal kaynaklardan derlenir ve <strong>hekimlerin kişisel verisidir</strong>; onlara yönelik aydınlatma ve itiraz kanalı <strong>§13'tedir</strong>.</p>
 <p>⚠️ Uygulama <strong>ad-soyad, doğum tarihi, T.C. kimlik numarası, telefon numarası, konum veya profil fotoğrafı istemez ve tutmaz.</strong></p>
@@ -182,7 +207,7 @@
 <h3>2.3 Cihazında kalan, bize hiç ulaşmayan veriler</h3>
 <p>Bu, uygulamanın <strong>en büyük</strong> veri kümesidir:</p>
 <ul>
-<li><strong>Takip kayıtlarının tamamı</strong> (§2.1); telefonundaki <strong>tek bir veritabanı dosyasında</strong>. Bu dosya uygulamanın kendi korumalı alanında durur (§9).</li>
+<li><strong>Takip kayıtlarının tamamı</strong> (§2.1; 🔵 son satır olan doktor değerlendirmeleri <strong>hariç</strong>; onlar sunucudadır); telefonundaki <strong>tek bir veritabanı dosyasında</strong>. Bu dosya uygulamanın kendi korumalı alanında durur (§9).</li>
 <li>🔴 <strong>Senkronizasyon yok.</strong> Bu kayıtların <strong>tek doğru kopyası</strong> cihazındaki dosyadır; sunucuya gönderilmeyi bekleyen bir kuyruk, arka planda çalışan bir eşitleme yok. Bu yüzden takip tarafı <strong>tamamen çevrimdışı</strong> çalışır.</li>
 <li>🔴 <strong>Hesaplamalar da cihazında yapılır:</strong> evre değerlendirmesinin sonucu, döngü günü, semptom örüntülerinden çıkan içgörüler ve içerik önerileri; hiçbiri için veri sunucuya gitmez.</li>
 <li><strong>Kendi yazdığın serbest metinler</strong> (hatırlatıcı başlığı, doz notu) cihazından <strong>çıkmaz</strong>; yalnızca kendi yedeğini aldığında, <strong>şifreli olarak</strong> yedeğin içinde yer alır (§6).</li>
@@ -238,8 +263,9 @@
 <li><strong>Hesap güvenliği ve yönetimi:</strong> giriş, e-posta doğrulama, şifre sıfırlama, hesap silme. Bu e-postaları <strong>senin seçtiğin dilde</strong> gönderebilmek için dil tercihinin bir kopyası hesap üstverinde tutulur (§2.2, §2.3).</li>
 <li><strong>Yedeğini sana ulaştırmak:</strong> istediğinde şifreli yedek dosyanı oluşturmak ve senin doğrulanmış e-posta adresine göndermek (§6).</li>
 <li><strong>Yasal yükümlülüklerin yerine getirilmesi:</strong> rıza kayıtlarının saklanması, yetkili kurum taleplerinin karşılanması.</li>
+<li>🔵 <strong>Doktor dizinini oluşturmak:</strong> değerlendirmeni, aynı doktoru değerlendiren diğer kadınların yanıtlarıyla <strong>birleştirip toplu</strong> bir sonuç hesaplamak; aynı doktoru iki kez değerlendirmeni engellemek ve kötüye kullanımı sınırlamak. <strong>Bireysel yanıtın bu amaçla da hiç gösterilmez.</strong></li>
 </ol>
-<p>🔴 <strong>Yapmadıklarımız:</strong> Verilerini reklam veya pazarlama amacıyla kullanmıyoruz, üçüncü taraflara satmıyoruz, profil çıkarıp reklam ağlarıyla paylaşmıyoruz. Uygulamada reklam ağı, analitik aracı veya çökme bildirimi aracı <strong>bulunmuyor</strong>. Uygulama <strong>tıbbi tanı koymaz</strong>, doz veya reçete önermez. Gönderdiğimiz e-postalar <strong>hiçbir uzak görsel yüklemez</strong>; yani e-postayı açıp açmadığını takip etmiyoruz.</p>
+<p>🔴 <strong>Yapmadıklarımız:</strong> Verilerini reklam veya pazarlama amacıyla kullanmıyoruz, üçüncü taraflara satmıyoruz, profil çıkarıp reklam ağlarıyla paylaşmıyoruz. Uygulamada reklam ağı, analitik aracı veya çökme bildirimi aracı <strong>bulunmuyor</strong>. Uygulama <strong>tıbbi tanı koymaz</strong>, doz veya reçete önermez. Gönderdiğimiz e-postalar <strong>hiçbir uzak görsel yüklemez</strong>; yani e-postayı açıp açmadığını takip etmiyoruz. 🔵 <strong>Dizinde</strong> reklam, ücretli ilan, sponsorlu veya "öne çıkarılmış" doktor kaydı <strong>yoktur</strong>; değerlendirme verisi hiçbir doktora, kuruma veya üçüncü tarafa <strong>satılmaz veya aktarılmaz.</strong> Dizin aramalarını ve filtrelerini <strong>kimliğinle birlikte kaydetmiyoruz</strong> (<em>"hormon tedavisine açık doktor aradı"</em> da bir sağlık çıkarımıdır).</p>
 <h2>4. Hukuki sebepler</h2>
 <p><strong>Toplama yöntemi:</strong> kişisel verilerin, Uygulama ve ona bağlı sunucu altyapısı üzerinden, <strong>tamamen veya kısmen otomatik yollarla</strong>, elektronik ortamda toplanır. Her veri türünün dayandığı hukuki sebep aşağıdadır:</p>
 <table>
@@ -271,6 +297,14 @@
 <td>Oturum, IP ve güvenlik kayıtları</td>
 <td>Meşru menfaat (m.5/2-f); hesap güvenliği</td>
 </tr>
+<tr>
+<td>🔵 <strong>Doktor değerlendirmen</strong> (§2.1 son satır)</td>
+<td><strong>Ayrı ve açık rıza</strong> (m.6/2); değerlendirme formunu gönderirken <strong>tek seferlik</strong> olarak isteriz ve hangi sürümü onayladığını kaydederiz. Bu rıza <strong>iki şeyi birden kapsar:</strong> (a) değerlendirmenin sağlığına ilişkin bir beyan sayılması ve <strong>sunucuda tutulması</strong>, (b) <strong>Frankfurt'ta (Almanya) işlenmesi</strong> (m.9; §7). Rızayı vermeden değerlendirme gönderilemez; geri alırsan <strong>tüm değerlendirmelerin silinir</strong> (§11)</td>
+</tr>
+<tr>
+<td>🔵 <strong>Dizindeki hekimlerin katalog verisi</strong></td>
+<td>⚠️ <strong>Hukuki sebep henüz kesinleşmedi</strong> ve hukuki inceleme beklemektedir. Değerlendirilen seçenekler: ilgili kişinin <strong>kendisi tarafından alenileştirilmiş</strong> olması (m.5/2-d) ve <strong>meşru menfaat</strong> (m.5/2-f). 🔴 Bu metin bir seçim yapmıyor; hekimlere yönelik aydınlatma ve itiraz kanalı <strong>§13'tedir</strong></td>
+</tr>
 </tbody></table>
 <h2>5. Verilerini kimlerle paylaşıyoruz?</h2>
 <table>
@@ -282,7 +316,7 @@
 <tr>
 <td><strong>Supabase</strong> (altyapı/barındırma)</td>
 <td>Veritabanı, kimlik doğrulama, sunucu işlevleri</td>
-<td>🔴 <strong>Yalnızca §2.2'deki veriler</strong> (hesabın, rıza kaydın) <strong>ve §2.4'teki altyapı kayıtları.</strong> Takip kayıtların (semptom, döngü, rejim, uyku; §2.1) buraya <strong>gitmez</strong></td>
+<td>🔴 <strong>Yalnızca §2.2'deki veriler</strong> (hesabın, rıza kaydın ve varsa <strong>doktor değerlendirmelerin</strong> + dizinin kendi kayıtları) <strong>ve §2.4'teki altyapı kayıtları.</strong> Takip kayıtların (semptom, döngü, rejim, uyku; §2.1) buraya <strong>gitmez</strong></td>
 </tr>
 <tr>
 <td><strong>Brevo</strong> (e-posta gönderimi)</td>
@@ -302,6 +336,7 @@
 </tbody></table>
 <p>Bunların dışında <strong>başka bir üçüncü tarafa aktarım yapmıyoruz.</strong> Reklam ağı, analitik sağlayıcı veya veri simsarı kullanılmamaktadır.</p>
 <p>⚠️ <strong>Apple bu tabloda yer almaz, çünkü o bizim yaptığımız bir aktarım değildir:</strong> telefonunun iCloud/iTunes yedeği açıksa, işletim sistemi sağlık veritabanı dosyanı Apple'a yedekler. Bu tamamen senin cihaz ayarına bağlıdır ve §2.3'te açıkça anlatılmıştır.</p>
+<p>🔵 <strong>Dizin hakkında dürüst bir ayrım:</strong> değerlendirmen <strong>hiçbir üçüncü tarafa aktarılmaz</strong>; ne doktora, ne kuruma. Ama <strong>toplu sonuç herkese açıktır:</strong> dizini uygulamada <strong>hesap açmamış biri de</strong> görebilir. Yani görünür olan şey <em>"üç kadından ikisi bu maddede olumlu yanıt verdi"</em> biçiminde bir sayıdır; <strong>kimin ne yanıt verdiği değildir</strong> ve bu sayı en az üç yanıt birikmeden hiç gösterilmez (§2.0).</p>
 <p>⚠️ <strong>Dürüstlük notu:</strong> yukarıdaki sağlayıcılarla veri işleme sözleşmeleri (DPA), sağlayıcıların hizmet şartlarının eki olarak düzenlenmiştir ve bu şartların kabulüyle <strong>yürürlüktedir</strong>; ayrıca atılan bir ıslak imza yoktur.</p>
 <h2>6. Yedekleme ve verilerini dışa aktarma</h2>
 <p>Takip kayıtların (semptom, döngü, rejim, uyku…) yalnızca cihazında olduğu için, telefonunu kaybetme riskine karşı Uygulama sana <strong>kendi yedeğini alma</strong> yolunu sunar. Nasıl çalıştığını <strong>ne küçümsemeden ne de abartmadan</strong> anlatıyoruz:</p>
@@ -350,13 +385,15 @@
 <li><strong>E-posta sağlayıcısının kendi gönderim kayıtları</strong> bizim kontrolümüzde değildir.</li>
 <li><strong>Dosya senin e-posta kutunda kalır.</strong> Hesabını silsen bile biz onu silemeyiz; o kopya artık senin elindedir.</li>
 </ul>
+<p>🔵 <strong>Yedekte ne YOK:</strong> <strong>doktor değerlendirmelerin yedek dosyasına girmez.</strong> Gerekçesi basit; yedek, <strong>cihazındaki</strong> kayıtların bir kopyasıdır; değerlendirmelerin ise sunucuda durur, yani telefonunu kaybetsen bile <strong>kaybolmaz</strong> (hesabınla geri gelirler). Onları görmek, değiştirmek ve silmek için uygulamadaki <strong>"Değerlendirmelerim"</strong> listesini kullanırsın (§10).</p>
 <h2>7. Yurt dışına aktarım</h2>
 <p>Hedefimiz kullanıcı verisinin Türkiye'de tutulmasıdır; bugünkü altyapımız ise yurt dışındadır ve bunu açıkça söylüyoruz:</p>
 <ul>
 <li>🟢 <strong>Takip kayıtların (semptom, döngü, rejim, uyku) yurt dışına hiç gitmez</strong>; çünkü sunucuya hiç gitmezler (§2.0). Bu bölümün konusu <strong>sağlık günlüğün değildir.</strong></li>
-<li>Yurt dışında işlenen veriler <strong>hesap verilerin (§2.2)</strong> ve <strong>altyapı kayıtlarıdır (§2.4)</strong>. Bunlar <strong>Frankfurt (Almanya)</strong> bölgesinde işlenir; yedeğini e-postayla gönderirken devreye giren sunucu işlevi aynı bölgeye sabitlenmiştir ve e-posta sağlayıcımız <strong>Belçika</strong>'dadır (§6); ikisi de Avrupa Birliği içindedir.</li>
+<li>Yurt dışında işlenen veriler <strong>hesap verilerin (§2.2)</strong>, 🔵 <strong>doktor değerlendirmelerin</strong> ve <strong>altyapı kayıtlarıdır (§2.4)</strong>. Bunlar <strong>Frankfurt (Almanya)</strong> bölgesinde işlenir; yedeğini e-postayla gönderirken devreye giren sunucu işlevi aynı bölgeye sabitlenmiştir ve e-posta sağlayıcımız <strong>Belçika</strong>'dadır (§6); ikisi de Avrupa Birliği içindedir.</li>
 <li><strong>Hukuki dayanak: açık rızandır</strong> (KVKK m.9). Hesap verilerinin yurt dışında işlenmesine ilişkin rızanı, rıza ekranında <strong>ayrı bir madde</strong> olarak isteriz ve kaydını tutarız. ⚠️ Sunucumuz yurt dışında olduğu için bu rızayı geri almanın pratik karşılığı <strong>hesabını silmektir</strong> (§8); bunu gizlemiyoruz.</li>
 <li>Bu Uygulamanın niteliği gereği <em>"Lumia'da kayıtlı bir e-posta adresi"</em> bilgisi tek başına bir sağlık beyanı sayılabilir; aktarılan küme bu yüzden bilinçli olarak <strong>asgaride</strong> tutulur (e-posta + rıza kaydı) ve sağlık günlüğün hiçbir koşulda yurt dışına taşınmaz.</li>
+<li>🔵 <strong>Dizin açıldığında:</strong> doktor değerlendirmen de Frankfurt'ta işlenir ve o <strong>sağlığına ilişkin bir beyandır</strong> (§2.1); değerlendirme formunun rızası bu yüzden <strong>m.6 açık rızasıyla birlikte m.9'u (yurt dışında işleme) da açıkça kapsar</strong> (§4).</li>
 </ul>
 <h2>8. Verilerini ne kadar süre saklıyoruz?</h2>
 <ul>
@@ -365,6 +402,7 @@
 <li><strong>Oturum ve güvenlik kayıtların</strong> (§2.4; IP adresin, giriş/kayıt olayları) <strong>en çok 90 gün</strong> saklanır ve süresi dolanlar düzenli olarak silinir. Altyapı sağlayıcılarının kendi işletim logları ve felaket kurtarma yedekleri bunun dışındadır; onlar sağlayıcının kendi süresine tabidir (aşağıdaki not).</li>
 <li><strong>Hesabını sildiğinde iki şey birlikte olur:</strong> 1. Sunucudaki hesabın ve ona bağlı tüm kayıtlar silinir (<strong>tek istisna, bir alt maddedeki rıza kaydıdır</strong>); 2. <strong>Cihazındaki sağlık veritabanı da yok edilir.</strong> Silme işlemi yarıda kesilirse (örneğin uygulamayı kapatırsan) kalan kısım <strong>bir sonraki açılışta tamamlanır</strong>. İşlem <strong>geri alınamaz.</strong></li>
 <li><strong>Rıza kayıtların</strong>, hesabın silinmesinden sonra <strong>5 yıl</strong> daha saklanır ve sürenin sonunda silinir. Dayanağı m.5/2-e'dir: rızanın alındığını ve geri alındığını, hesap kapandıktan <strong>sonra</strong> gelebilecek bir iddiaya karşı da <strong>ispat edebilmemiz</strong> gerekir. Bu kayıtta hiçbir sağlık verin yoktur; hesabın silinmesiyle birlikte e-posta adresin de kayıttan çıkar; geriye yalnızca rastgele kullanıcı kimliği (UUID) ve rıza üstverisi kalır.</li>
+<li>🔵 <strong>Doktor değerlendirmelerin</strong> sen silene, <strong>rızanı geri alana</strong> (§11) veya hesabını silene kadar sunucuda kalır; üçünde de <strong>silinirler</strong> ve toplu sonuç bir sonraki haftalık hesaplamada <strong>yeniden hesaplanır</strong> (eşiğin altına düşen bir madde artık gösterilmez). ⚠️ Toplu sonuç haftalık yenilendiği için, silme ile dizindeki sayının güncellenmesi arasında <strong>en çok bir haftalık gecikme</strong> olabilir. Ayrıca bir değerlendirme, ziyaret tarihinden <strong>48 ay</strong> sonra toplu hesaptan <strong>düşer</strong>; yanıtın silinmez, yalnız dizinde gösterilen sonuca katılmaz.</li>
 </ul>
 <p>⚠️ <strong>Silmenin ulaşamadığı iki yer var ve bunu açıkça söylüyoruz:</strong></p>
 <ol>
@@ -382,6 +420,9 @@
 <p><strong>Sunucudaki veriler için:</strong></p>
 <ul>
 <li>Her kullanıcı <strong>yalnızca kendi verisine</strong> erişebilir. Bu, veritabanı seviyesinde <strong>satır düzeyi güvenlik (Row Level Security)</strong> ile zorunlu kılınmıştır; uygulama kodundaki bir hata bile başka bir kullanıcının verisini açığa çıkaramaz.</li>
+<li>🔵 <strong>Doktor değerlendirmeleri için aynı kural, bir fazlasıyla:</strong> değerlendirme satırını <strong>yalnızca onu yazan hesap</strong> okuyabilir ve yazabilir; bu tablo için <strong>herkese açık hiçbir okuma izni yoktur</strong> ve dizin bu tabloyu hiç okumaz; yalnızca <strong>toplu</strong> sonuç tablosunu okur. Anonim bir oturumdan değerlendirme <strong>gönderilemez.</strong></li>
+<li>Veriler aktarımda ve saklamada şifrelenir.</li>
+<li>Uygulama personeli, rutin işleyişte kullanıcıların kayıtlarını görüntülemez.</li>
 </ul>
 <p>⚠️ Hiçbir sistem için <strong>mutlak güvenlik</strong> sözü vermiyoruz; yukarıdakiler aldığımız somut önlemlerdir.</p>
 <h2>10. KVKK m.11 kapsamındaki haklarını</h2>
@@ -403,6 +444,8 @@
 <li>✅ <strong>Rıza tercihleri</strong> ekranından (<strong>Profil → Gizlilik ve veri → Rıza tercihleri</strong>) sağlık verisi işlemeye verdiğin açık rızayı <strong>görebilir</strong> (ne için, hangi metin sürümüyle, ne zaman verdin) ve <strong>geri alabilirsin</strong>; yazılı başvuru göndermene gerek yok. Geri aldığında ne olacağını <strong>§11</strong> anlatır,</li>
 <li><strong>Yedekleme</strong> ekranından kayıtlarının şifreli bir kopyasını <strong>oluşturabilir ve indirebilirsin</strong> (§6),</li>
 <li><strong>Hesabı sil</strong> ile hem sunucudaki hesabını hem cihazındaki kayıtlarını kalıcı olarak silebilirsin (§8),</li>
+<li>🔵 <strong>"Değerlendirmelerim"</strong> listesinden doktor değerlendirmelerini <strong>görebilir, güncelleyebilir ve tek tek silebilirsin</strong>; yani m.11'in erişme, düzeltme ve silme hakları bu veri için <strong>uygulama içinden</strong> karşılanır (başvuru yazmana gerek yok),</li>
+<li><strong>Çıkış yap</strong> cihazındaki kayıtlarını <strong>silmez</strong>; yalnızca oturumunu kapatır.</li>
 </ul>
 <p>✅ <strong>Rızanı geri alma yolu artık uygulamanın içinde.</strong> Önceki sürümlerde bu ekran <em>"hazırlanıyor"</em> diye duyuruluyordu; <strong>artık yayında</strong> ve yukarıdaki listenin ilk maddesinde yolu yazılı. ⚠️ Yukarıdaki <strong>başvuru adresi kapanmadı</strong>; m.11'in diğer hakları ve her türlü sorun için açık kalmaya devam ediyor.</p>
 <h2>11. Rızanı geri alırsan ne olur?</h2>
@@ -420,9 +463,13 @@
 <li><strong>Dil tercihin ve uygulama ayarların</strong> (ör. nefes egzersizinin süresi) korunur; bunlar sağlık verisi değildir ve silinmeleri sana bir şey kazandırmaz.</li>
 </ul>
 <p>Geri alma, geri alma tarihinden <strong>önceki</strong> hukuka uygun işlemeyi etkilemez. ⚠️ <strong>Fikrini bir daha değiştirebilirsin:</strong> geri aldıktan sonra uygulama seni rıza ekranına götürür; istersen oradan yeniden rıza verip baştan başlayabilirsin; ama <strong>silinen kayıtlar geri gelmez.</strong></p>
+<p>🔵 <strong>Dizin rızanı geri alırsan:</strong> sunucudaki <strong>tüm doktor değerlendirmelerin silinir</strong> ve etkiledikleri toplu sonuçlar bir sonraki haftalık hesaplamada <strong>yeniden hesaplanır</strong>; bir doktorun bir maddesi böylece eşiğin (üç yanıt) altına düşerse o madde <strong>artık gösterilmez.</strong> Değerlendirme gönderme yolu da kapanır; dizini <strong>gezmeye</strong> devam edebilirsin. ⚠️ Dizin rızası ile takip (sağlık verisi) rızası <strong>ayrı</strong> rızalardır: birini geri almak ötekini kendiliğinden geri almaz.</p>
 <p>⚠️ Daha önce aldığın yedek dosyaları senin elinde kalır; onları silmek sende.</p>
 <h2>12. Değişiklikler</h2>
 <p>Bu metni güncellediğimizde yürürlük tarihini değiştirir ve önemli değişiklikleri uygulama içinden bildiririz. Sağlık verisi işlemenin kapsamını genişleten bir değişiklikte <strong>yeniden açık rıza</strong> isteriz.</p>
+<h2>13. 🔵 Dizindeki hekim bilgileri</h2>
+<blockquote><p>🔵 Bu bölüm, doktor dizini (17-a) sevk edildiğinde yürürlüğe girer.</p></blockquote>
+<p>Dizindeki hekim bilgileri (ad, unvan, kurum, il/ilçe) hekimlerin kamuya açık bilgilerinden derlenmiştir.</p>
 <hr>
 <p><em>Bu belge KVKK m.10 aydınlatma yükümlülüğü kapsamında hazırlanmıştır ve Gizlilik Politikası (<code>gizlilik-politikasi.md</code>) ile birlikte okunmalıdır.</em></p>
 
