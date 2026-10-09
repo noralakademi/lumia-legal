@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index,follow">
 <!-- ÜRETİLMİŞ DOSYA — ELLE DÜZENLEME.
-     Kaynak: docs/legal/EN/kvkk-privacy-notice.md · profil: dizin=var
-     Yeniden üret: dart run tool/hukuk_yayinla.dart --dizin=var -->
+     Kaynak: docs/legal/EN/kvkk-privacy-notice.md · profil: dizin=yok
+     Yeniden üret: dart run tool/hukuk_yayinla.dart --dizin=yok -->
 <style>
   :root { color-scheme: light dark;
     --kagit:#FBFBF3; --murekkep:#1b2a16; --soluk:#55604f; --cizgi:#e2e6da; }
@@ -60,7 +60,7 @@
 <h2>2. What data do we process?</h2>
 <p>The App <strong>can be used without creating an account (anonymously).</strong> Even in anonymous use, an anonymous user ID is assigned to your device.</p>
 <h3>2.0 First, the most important thing: where your data lives</h3>
-<blockquote><p>🔴 <strong>Your symptom, cycle, regimen and sleep records are not kept on the server. Your doctor reviews are kept on the server so that they can be shared, in aggregate, with other women; your individual answer is never shown.</strong></p></blockquote>
+<blockquote><p>🔴 <strong>Your health records are not kept on our servers; they stay on your device. The only things on the server are your account (your email address, your nickname, your session and security logs, and a copy of your language preference) and your consent record.</strong></p></blockquote>
 <p>Once you understand this distinction, the rest of this notice is much easier to read:</p>
 <table>
 <thead><tr>
@@ -78,26 +78,12 @@
 <td>On the server (cloud)</td>
 <td>Your email address (if any), your user ID, the hash of your password, your session information, and a record of the consents you have given</td>
 </tr>
-<tr>
-<td><strong>Your doctor reviews</strong></td>
-<td>🔵 <strong>On the server</strong>; a deliberate exception</td>
-<td>If you review a doctor: which doctor, the month and year of your visit, and your answers to the eight items (see the last row of §2.1)</td>
-</tr>
 </tbody></table>
 <p><strong>What this means in practice:</strong> when you log a symptom, mark a dose time, or fill in your sleep diary, <strong>that data does not reach us.</strong> There is no copy of it on our server; not even an encrypted one, <strong>none at all.</strong> That is why the tracking side of the App <strong>works without an internet connection</strong>.</p>
-<p><strong>Why doctor reviews are the exception; and why we are not hiding it:</strong> the point of the directory is to make women's experiences <strong>visible to one another.</strong> A doctor's results are computed by <strong>combining</strong> the answers of at least three women, and no such computation is possible with data that never leaves your phone. So your review <strong>is kept on the server</strong>, and we say so plainly. In return:</p>
-<ul>
-<li>🔴 <strong>Your individual answer is never shown, to anyone, anywhere</strong>; not to other users, not to the doctor. The directory shows only the <strong>aggregate</strong> result.</li>
-<li><strong>Only you can see your own answer</strong>, and you can <strong>update or delete it</strong> at any time.</li>
-<li>The result for an item is not shown at all until <strong>at least three answers</strong> have accumulated, and aggregate results are refreshed <strong>weekly, not instantly</strong>; so that the moment a single answer changes a result cannot be observed from outside.</li>
-<li><strong>A review requires an account</strong>; it cannot be submitted in anonymous use. <strong>Browsing</strong> the directory does not require an account.</li>
-<li>🔴 <strong>Your menopause stage, your symptoms and your regimen are NOT written into a review.</strong> The directory does not move your on-device health records back onto the server.</li>
-<li>We ask for <strong>separate explicit consent</strong> for your review, and if you withdraw it <strong>all of your reviews are deleted</strong> (§11).</li>
-</ul>
 <p><strong>Why we keep the consent record on the server:</strong> we have to be able to <strong>demonstrate</strong> that you gave your explicit consent to the processing of health data; and that you withdrew it, if you do (Article 6/2 of KVKK). That record consists of which consent, which version, and when; it contains <strong>none of your health entries.</strong></p>
 <p>⚠️ <strong>There is a cost to this and we state it plainly:</strong> if you lose or replace your phone, or delete the App, <strong>your records go with it</strong>; we cannot restore them for you, because we have no copy. That is why the App offers you a way to <strong>take your own backup</strong> (§6).</p>
 <h3>2.1 Special category data; health data</h3>
-<p>Data considered <strong>special category</strong> under Article 6 of KVKK, which we process <strong>only with your explicit consent</strong>. 🔴 <strong>All of your tracking records are kept on your device; none of them has a copy on our server. The single exception is the last row of the table (doctor reviews), and that row is deliberately on the server</strong>. The reason is in §2.0.</p>
+<p>Data considered <strong>special category</strong> under Article 6 of KVKK, which we process <strong>only with your explicit consent</strong>. 🔴 <strong>All of your tracking records are kept on your device; none of them has a copy on our server</strong>.</p>
 <table>
 <thead><tr>
 <th>Data</th>
@@ -144,16 +130,10 @@
 <td>Which article you read, how much of it, and when</td>
 <td>🟢 On your device</td>
 </tr>
-<tr>
-<td>🔵 <strong>Your doctor review</strong></td>
-<td>The doctor you reviewed, <strong>the month and year of your visit</strong>, your answers to the eight items (five levels each; you may skip items) and the version of the consent text you accepted. 🔴 <strong>There is no free-text field</strong>; you cannot write a comment, and neither can anyone else. 🔴 <strong>Your stage, your symptoms and your regimen are NOT written into this record</strong></td>
-<td>🔵 <strong>On the server</strong> (the exception in §2.0)</td>
-</tr>
 </tbody></table>
-<p>⚠️ <strong>Why a doctor review counts as special category data:</strong> the statement <em>"this month I saw an obstetrician-gynaecologist and we discussed hormone therapy"</em> is, in itself, <strong>a statement about your health.</strong> So we do not treat it as ordinary user input but as <strong>special category personal data</strong>: separate explicit consent, access restricted to you alone (§9), aggregate display, and the ability to withdraw.</p>
 <p>⚠️ <strong>An honest note about free-text fields:</strong> we cannot control <strong>what you type</strong> into a reminder title or a dose note. If you write a diagnosis, a doctor's name, or information belonging to another person there, that is saved too. These fields never leave your device; but when you take a backup, they are included in it <strong>in encrypted form</strong> (§6).</p>
 <h3>2.2 Data we keep on the server</h3>
-<p>🔴 <strong>The list is no longer than this; your account, your consent record and (if any) your doctor reviews.</strong></p>
+<p>🔴 <strong>The list is no longer than this; your account and your consent record.</strong></p>
 <table>
 <thead><tr>
 <th>Data</th>
@@ -195,11 +175,6 @@
 <td>Which consent, which version, whether granted, and when</td>
 <td><strong>Evidence required by law</strong>; we keep this on the server so that we can demonstrate that you gave or withdrew consent (Article 6/2 of KVKK); retention after account deletion is in §8</td>
 </tr>
-<tr>
-<td>🔵 <strong>Your doctor reviews</strong></td>
-<td>The record described in the last row of §2.1; <strong>one</strong> record per doctor you review (if you review the same doctor again, your existing record is <strong>updated</strong>; a new one is not created)</td>
-<td>Only <strong>you</strong> can read it (§9). The directory shows only the <strong>aggregate</strong> result</td>
-</tr>
 </tbody></table>
 <p><strong>The directory's own records; these are not your data:</strong> the directory also holds the <strong>doctor catalogue</strong> (title, name and surname, specialty, province/district, institutional details, and <strong>the source plus the verification date of every item</strong>), the <strong>aggregate review results</strong> (counts per item per doctor and a verbal label; <strong>these records do not contain who gave which answer</strong>), <strong>correction requests</strong>, and the <strong>province/district list</strong>. Catalogue data is compiled from publicly available institutional sources and is <strong>the doctors' personal data</strong>; the notice and objection channel addressed to them is in <strong>§13</strong>.</p>
 <p>⚠️ The App <strong>does not ask for or hold your full name, date of birth, national ID number, phone number, location or profile photo.</strong></p>
@@ -207,7 +182,7 @@
 <h3>2.3 Data that stays on your device and never reaches us</h3>
 <p>This is the App's <strong>largest</strong> data set:</p>
 <ul>
-<li><strong>All of your tracking records</strong> (§2.1; 🔵 <strong>except</strong> the last row, doctor reviews, which are on the server); in <strong>a single database file</strong> on your phone. That file sits in the App's own protected area (§9).</li>
+<li><strong>All of your tracking records</strong> (§2.1); in <strong>a single database file</strong> on your phone. That file sits in the App's own protected area (§9).</li>
 <li>🔴 <strong>There is no synchronization.</strong> The <strong>only authoritative copy</strong> of these records is the file on your device; there is no queue waiting to upload them and no background sync. That is why the tracking side works <strong>fully offline</strong>.</li>
 <li>🔴 <strong>The computations happen on your device too:</strong> the result of the stage assessment, your cycle day, the insights derived from your symptom patterns, and content suggestions; none of them send data to a server.</li>
 <li><strong>The free text you write yourself</strong> (reminder title, dose note) <strong>does not leave your device</strong>; it is included, <strong>in encrypted form</strong>, only in a backup you create yourself (§6).</li>
@@ -263,9 +238,8 @@
 <li><strong>Account security and management:</strong> sign-in, email verification, password reset, account deletion. So that we can send these emails <strong>in the language you chose</strong>, a copy of your language preference is kept in your account metadata (§2.2, §2.3).</li>
 <li><strong>Delivering your backup to you:</strong> creating your encrypted backup file when you ask for it and sending it to your verified email address (§6).</li>
 <li><strong>Meeting legal obligations:</strong> retaining consent records and responding to requests from competent authorities.</li>
-<li>🔵 <strong>Building the doctor directory:</strong> combining your review with the answers of other women who reviewed the same doctor to compute an <strong>aggregate</strong> result; preventing you from reviewing the same doctor twice; and limiting abuse. <strong>Your individual answer is never shown for this purpose either.</strong></li>
 </ol>
-<p>🔴 <strong>What we do not do:</strong> We do not use your data for advertising or marketing, we do not sell it to third parties, and we do not build profiles to share with ad networks. The App contains <strong>no</strong> ad network, analytics tool or crash-reporting tool. The App <strong>does not diagnose</strong> and does not recommend doses or prescriptions. The emails we send <strong>load no remote images</strong>; meaning we do not track whether you opened them. 🔵 <strong>In the directory</strong> there are <strong>no</strong> adverts, paid listings, sponsored or "featured" doctor records; review data is <strong>never sold or transferred</strong> to any doctor, institution or third party. We <strong>do not log your directory searches and filters together with your identity</strong> (<em>"searched for a doctor open to hormone therapy"</em> is itself an inference about health).</p>
+<p>🔴 <strong>What we do not do:</strong> We do not use your data for advertising or marketing, we do not sell it to third parties, and we do not build profiles to share with ad networks. The App contains <strong>no</strong> ad network, analytics tool or crash-reporting tool. The App <strong>does not diagnose</strong> and does not recommend doses or prescriptions. The emails we send <strong>load no remote images</strong>; meaning we do not track whether you opened them.</p>
 <h2>4. Lawful bases</h2>
 <p><strong>How we collect it:</strong> your personal data is collected electronically, <strong>by wholly or partly automated means</strong>, through the App and the server infrastructure attached to it. The lawful basis for each data type is below:</p>
 <table>
@@ -297,14 +271,6 @@
 <td>Session, IP and security logs</td>
 <td>Legitimate interest (Art. 5/2-f); account security</td>
 </tr>
-<tr>
-<td>🔵 <strong>Your doctor review</strong> (last row of §2.1)</td>
-<td><strong>Separate explicit consent</strong> (Art. 6/2); we ask for it <strong>once</strong>, when you submit the review form, and we record which version you accepted. That consent covers <strong>two things at once:</strong> (a) that the review counts as a statement about your health and is <strong>kept on the server</strong>, and (b) that it is <strong>processed in Frankfurt, Germany</strong> (Art. 9; see §7). A review cannot be submitted without this consent; if you withdraw it, <strong>all of your reviews are deleted</strong> (§11)</td>
-</tr>
-<tr>
-<td>🔵 <strong>Catalogue data about the doctors in the directory</strong></td>
-<td>⚠️ <strong>The lawful basis is not yet settled</strong> and is pending legal review. The options under consideration: the data having been <strong>made public by the data subject</strong> (Art. 5/2-d) and <strong>legitimate interest</strong> (Art. 5/2-f). 🔴 This notice does not make that choice; the notice and objection channel addressed to doctors is in <strong>§13</strong></td>
-</tr>
 </tbody></table>
 <h2>5. Who do we share your data with?</h2>
 <table>
@@ -316,7 +282,7 @@
 <tr>
 <td><strong>Supabase</strong> (infrastructure/hosting)</td>
 <td>Database, authentication, server functions</td>
-<td>🔴 <strong>Only the data in §2.2</strong> (your account, your consent record and, if any, <strong>your doctor reviews</strong> plus the directory's own records) <strong>and the infrastructure records in §2.4.</strong> Your tracking records (symptoms, cycle, regimen, sleep; §2.1) <strong>do not go</strong> here</td>
+<td>🔴 <strong>Only the data in §2.2</strong> (your account, your consent record) <strong>and the infrastructure records in §2.4.</strong> Your tracking records (symptoms, cycle, regimen, sleep; §2.1) <strong>do not go</strong> here</td>
 </tr>
 <tr>
 <td><strong>Brevo</strong> (email delivery)</td>
@@ -336,7 +302,6 @@
 </tbody></table>
 <p>Beyond these, <strong>we make no transfer to any other third party.</strong> No ad network, analytics provider or data broker is used.</p>
 <p>⚠️ <strong>Apple is not in this table, because that is not a transfer we make:</strong> if your phone's iCloud/iTunes backup is on, the operating system backs up your health database file to Apple. That depends entirely on your own device setting and is stated plainly in §2.3.</p>
-<p>🔵 <strong>An honest distinction about the directory:</strong> your review is <strong>transferred to no third party</strong>; not to the doctor, not to an institution. But <strong>the aggregate result is public:</strong> someone who has not even created an account can see the directory in the App. What is visible is a figure of the form <em>"two of three women answered positively on this item"</em>; <strong>not who answered what</strong>; and that figure is not shown at all until at least three answers have accumulated (§2.0).</p>
 <p>⚠️ <strong>Honesty note:</strong> the data processing agreements (DPAs) with the providers above are annexes to their terms of service and are <strong>in force</strong> upon acceptance of those terms; there is no separate wet signature.</p>
 <h2>6. Backups and exporting your data</h2>
 <p>Because your tracking records (symptoms, cycle, regimen, sleep…) exist only on your device, the App gives you a way to <strong>take your own backup</strong> in case you lose your phone. Here is how it works, stated <strong>without downplaying or overstating anything</strong>:</p>
@@ -385,15 +350,13 @@
 <li><strong>The email provider's own delivery logs</strong> are not within our control.</li>
 <li><strong>The file stays in your mailbox.</strong> Even if you delete your account, we cannot delete that copy; it is yours now.</li>
 </ul>
-<p>🔵 <strong>What the backup does NOT contain:</strong> <strong>your doctor reviews are not included in the backup file.</strong> The reason is simple; a backup is a copy of the records <strong>on your device</strong>, whereas your reviews live on the server, so they are <strong>not lost</strong> even if you lose your phone (they come back with your account). To view, change or delete them you use the <strong>"My reviews"</strong> list in the App (§10).</p>
 <h2>7. Cross-border transfer</h2>
 <p>Our goal is to keep user data in Türkiye; today's infrastructure is abroad, and we say so plainly:</p>
 <ul>
 <li>🟢 <strong>Your tracking records (symptoms, cycle, regimen, sleep) never go abroad</strong>; because they never go to a server at all (§2.0). This section is <strong>not about your health diary.</strong></li>
-<li>The data processed abroad is <strong>your account data (§2.2)</strong>, 🔵 <strong>your doctor reviews</strong> and <strong>the infrastructure records (§2.4)</strong>. They are processed in the <strong>Frankfurt (Germany)</strong> region; the server function that runs when you email yourself a backup is pinned to the same region, and our email provider is in <strong>Belgium</strong> (§6); both within the European Union.</li>
+<li>The data processed abroad is <strong>your account data (§2.2)</strong> and <strong>the infrastructure records (§2.4)</strong>. They are processed in the <strong>Frankfurt (Germany)</strong> region; the server function that runs when you email yourself a backup is pinned to the same region, and our email provider is in <strong>Belgium</strong> (§6); both within the European Union.</li>
 <li><strong>The legal basis is your explicit consent</strong> (Article 9 of KVKK). We ask for your consent to the processing of your account data abroad as <strong>a separate item</strong> on the consent screen, and we keep a record of it. ⚠️ Because our server is abroad, the practical way to withdraw this consent is to <strong>delete your account</strong> (§8); we are not hiding that.</li>
 <li>Given the nature of this App, the mere fact that <em>"an email address is registered with Lumia"</em> may itself amount to a statement about health; that is why the transferred set is deliberately kept <strong>minimal</strong> (email + consent record), and your health diary is never moved abroad under any circumstances.</li>
-<li>🔵 <strong>When the directory launches:</strong> your doctor review is processed in Frankfurt too, and it <strong>is a statement about your health</strong> (§2.1); that is why the consent on the review form <strong>expressly covers Article 9 (processing abroad) alongside Article 6 explicit consent</strong> (§4).</li>
 </ul>
 <h2>8. How long do we keep your data?</h2>
 <ul>
@@ -402,7 +365,6 @@
 <li><strong>Your session and security logs</strong> (§2.4; your IP address, sign-in and sign-up events) are kept for <strong>at most 90 days</strong>, and entries past that period are deleted on a regular schedule. The infrastructure providers' own operational logs and disaster-recovery backups are outside this; they follow the provider's own periods (see the note below).</li>
 <li><strong>When you delete your account, two things happen together:</strong> 1. Your account on the server and all records linked to it are deleted (<strong>the one exception is the consent record, two bullets below</strong>); 2. <strong>The health database on your device is destroyed as well.</strong> If the deletion is interrupted (for example if you close the App), the remaining part <strong>is completed the next time the App opens</strong>. The operation <strong>cannot be undone.</strong></li>
 <li><strong>Your consent records</strong> are kept for <strong>5 more years</strong> after your account is deleted, and are erased at the end of that period. The basis is Art. 5/2-e: we must be able to <strong>prove</strong>, even against a claim made after the account is closed, that consent was given and withdrawn. The record holds none of your health data; once the account is deleted it no longer contains your email address; only the random user ID (UUID) and the consent metadata remain.</li>
-<li>🔵 <strong>Your doctor reviews</strong> stay on the server until you delete them, until you <strong>withdraw your consent</strong> (§11), or until you delete your account; in all three cases they <strong>are deleted</strong>, and the aggregate result is <strong>recomputed</strong> in the next weekly calculation (an item that falls below the threshold is no longer shown). ⚠️ Because the aggregate is refreshed weekly, there may be <strong>a delay of up to one week</strong> between a deletion and the figure in the directory being updated. A review also <strong>drops out</strong> of the aggregate <strong>48 months</strong> after the visit; your answer is not deleted, it simply stops counting towards the result shown in the directory.</li>
 </ul>
 <p>⚠️ <strong>There are two places deletion does not reach, and we say so plainly:</strong></p>
 <ol>
@@ -420,9 +382,6 @@
 <p><strong>For the data on the server:</strong></p>
 <ul>
 <li>Each user can access <strong>only their own data</strong>. This is enforced at the database level with <strong>Row Level Security</strong>; so even a bug in the application code cannot expose another user's data.</li>
-<li>🔵 <strong>The same rule for doctor reviews, and then some:</strong> a review row can be read and written <strong>only by the account that wrote it</strong>; there is <strong>no public read permission whatsoever</strong> on that table, and the directory never reads it; it reads only the <strong>aggregate</strong> table. A review <strong>cannot be submitted</strong> from an anonymous session.</li>
-<li>Data is encrypted in transit and at rest.</li>
-<li>Our staff do not view users' records in routine operations.</li>
 </ul>
 <p>⚠️ We do not promise <strong>absolute security</strong> for any system; the above are the concrete measures we take.</p>
 <h2>10. Your rights under Article 11 of KVKK</h2>
@@ -444,8 +403,6 @@
 <li>✅ <strong>View and withdraw</strong> your explicit consent to health data processing from the <strong>Consent preferences</strong> screen (<strong>Profile → Privacy and data → Consent preferences</strong>): you can see what you consented to, with which version of the text and when; and withdraw it without sending a written request. <strong>§11</strong> describes what happens when you do,</li>
 <li><strong>Create and download</strong> an encrypted copy of your records from the <strong>Backup</strong> screen (§6),</li>
 <li><strong>Delete account</strong> to permanently delete both your account on the server and your records on the device (§8),</li>
-<li>🔵 <strong>View, update and individually delete</strong> your doctor reviews from the <strong>"My reviews"</strong> list; meaning that for this data the Article 11 rights of access, rectification and erasure are satisfied <strong>from inside the App</strong> (you do not need to send a written request),</li>
-<li><strong>Sign out</strong>; this does <strong>not</strong> delete the records on your device; it only ends your session.</li>
 </ul>
 <p>✅ <strong>Withdrawing your consent now happens inside the App.</strong> Earlier versions announced this screen as upcoming; <strong>it has now shipped</strong>, and the first item in the list above tells you where to find it. ⚠️ The application address above has <strong>not</strong> closed; it stays open for your other Article 11 rights and for any problem you run into.</p>
 <h2>11. What happens if you withdraw consent?</h2>
@@ -463,13 +420,9 @@
 <li><strong>Your language preference and app settings</strong> (for example the length of the breathing exercise) are kept; they are not health data and deleting them would gain you nothing.</li>
 </ul>
 <p>Withdrawal does not affect processing that was lawful <strong>before</strong> the date of withdrawal. ⚠️ <strong>You can change your mind again:</strong> after withdrawing, the App takes you back to the consent screen; if you want, you can consent again from there and start over; but <strong>the deleted records do not come back.</strong></p>
-<p>🔵 <strong>If you withdraw your directory consent:</strong> <strong>all of your doctor reviews on the server are deleted</strong>, and the aggregate results they affected are <strong>recomputed</strong> in the next weekly calculation; if an item for a doctor thereby falls below the threshold (three answers), that item is <strong>no longer shown.</strong> The path for submitting reviews also closes; you can still <strong>browse</strong> the directory. ⚠️ The directory consent and the tracking (health data) consent are <strong>separate</strong> consents: withdrawing one does not automatically withdraw the other.</p>
 <p>⚠️ Backup files you took earlier remain in your hands; deleting them is up to you.</p>
 <h2>12. Changes</h2>
 <p>When we update this notice we will change the effective date and announce significant changes from within the App. If a change broadens the scope of health data processing, we will ask for <strong>fresh explicit consent</strong>.</p>
-<h2>13. 🔵 Doctor information in the directory</h2>
-<blockquote><p>🔵 This section takes effect when the doctor directory (17-a) ships.</p></blockquote>
-<p>The doctor information in the directory (name, title, institution, province/district) is compiled from information the doctors have made publicly available.</p>
 <hr>
 <p><em>This document is issued under the disclosure obligation in Article 10 of KVKK and should be read together with the Privacy Policy (<code>privacy-policy.md</code>).</em></p>
 
