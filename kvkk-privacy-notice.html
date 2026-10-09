@@ -60,8 +60,7 @@
 <h2>2. What data do we process?</h2>
 <p>The App can be used without creating an account (anonymously). Even in anonymous use, an anonymous user ID is assigned to your device.</p>
 <h3>2.0 First, the most important thing: where your data lives</h3>
-<blockquote><p><strong>Your health records are not kept on our servers; they stay on your device. The only things on the server are your account (your email address, your nickname, your session and security logs, and a copy of your language preference) and your consent record.</strong></p></blockquote>
-<p>Once you understand this distinction, the rest of this notice is much easier to read:</p>
+<blockquote><p>Your health records are not kept on our servers; they stay only on your device. The only things on the server are your account (your email address, your nickname, your session and security logs, and a copy of your language preference) and your consent record.</p></blockquote>
 <table>
 <thead><tr>
 <th></th>
@@ -79,11 +78,11 @@
 <td>Your email address (if any), your user ID, the hash of your password, your session information, and a record of the consents you have given</td>
 </tr>
 </tbody></table>
-<p><strong>What this means in practice:</strong> when you log a symptom, mark a dose time, or fill in your sleep diary, that data does not reach us. There is no copy of it on our server; not even an encrypted one, none at all. That is why the tracking side of the App <strong>works without an internet connection</strong>.</p>
-<p><strong>Why we keep the consent record on the server:</strong> we have to be able to demonstrate that you gave your explicit consent to the processing of health data; and that you withdrew it, if you do (Article 6/2 of KVKK). That record consists of which consent, which version, and when; it contains none of your health entries.</p>
-<p><strong>There is a cost to this and we state it plainly:</strong> if you lose or replace your phone, or delete the App, your records go with it; we cannot restore them for you, because we have no copy. That is why the App offers you a way to take your own backup (§6).</p>
+<p><strong>What this means in practice:</strong> when you log a symptom, mark a dose time, or fill in your sleep diary, that data does not reach us. There is no copy of it on our server. That is why the tracking side of the App works without an internet connection as well.</p>
+<p><strong>Why we keep the consent record on the server:</strong> we have to be able to demonstrate that you gave your explicit consent to the processing of health data, and that you withdrew it if you do (Article 6/2 of KVKK). That record consists of which consent, which version, and when. It contains none of your health entries.</p>
+<p>If you lose or replace your phone, or delete the App, your health records are lost with it. Because your data is held locally, we have no copy. We recommend taking a backup at regular intervals (§6).</p>
 <h3>2.1 Special category data; health data</h3>
-<p>Data considered special category under Article 6 of KVKK, which we process only with your explicit consent. <strong>All of your tracking records are kept on your device; none of them has a copy on our server</strong>.</p>
+<p>Data considered special category under Article 6 of KVKK, which we process only with your explicit consent. All of your tracking records are kept on your device. None of them has a copy on our servers.</p>
 <table>
 <thead><tr>
 <th>Data</th>
@@ -131,9 +130,8 @@
 <td>On your device</td>
 </tr>
 </tbody></table>
-<p><strong>An honest note about free-text fields:</strong> we cannot control <strong>what you type</strong> into a reminder title or a dose note. If you write a diagnosis, a doctor's name, or information belonging to another person there, that is saved too. These fields never leave your device; but when you take a backup, they are included in it in encrypted form (§6).</p>
+<p>An honest note about free-text fields: we cannot control what you type into a reminder title or a dose note. If you write a diagnosis, a doctor's name, or information belonging to another person there, that is saved too. These fields never leave your device; but when you take a backup, they are included in it in encrypted form (§6).</p>
 <h3>2.2 Data we keep on the server</h3>
-<p>The list is no longer than this; your account and your consent record.</p>
 <table>
 <thead><tr>
 <th>Data</th>
@@ -148,22 +146,22 @@
 <tr>
 <td>Email address</td>
 <td>·</td>
-<td>Only if you <strong>upgrade to a permanent account</strong></td>
+<td>Only if you upgrade to a permanent account</td>
 </tr>
 <tr>
 <td>Password hash</td>
 <td>·</td>
-<td>We <strong>do not see</strong> your password itself; the authentication infrastructure manages it</td>
+<td>We do not see your password itself; the authentication infrastructure manages it</td>
 </tr>
 <tr>
 <td>Nickname</td>
 <td>·</td>
-<td><strong>Optional</strong>; may be left empty</td>
+<td>May be left empty</td>
 </tr>
 <tr>
 <td>Your language preference</td>
 <td><code>tr</code> or <code>en</code></td>
-<td>Your actual preference is kept <strong>on your device</strong> (§2.3); this copy on the server exists so that we can send the identity emails (verification, password reset) in your language</td>
+<td>Your actual preference is kept on your device (§2.3); this copy on the server exists so that we can send the identity emails (verification, password reset) in your language</td>
 </tr>
 <tr>
 <td>Account state and timestamps</td>
@@ -173,25 +171,22 @@
 <tr>
 <td>Your consent record</td>
 <td>Which consent, which version, whether granted, and when</td>
-<td><strong>Evidence required by law</strong>; we keep this on the server so that we can demonstrate that you gave or withdrew consent (Article 6/2 of KVKK); retention after account deletion is in §8</td>
+<td>Evidence for legal purposes: we keep this on the server so that we can demonstrate that you gave or withdrew consent (Article 6/2 of KVKK)</td>
 </tr>
 </tbody></table>
-<p>The App <strong>does not ask for or hold your full name, date of birth, national ID number, phone number, location or profile photo.</strong></p>
-<p><strong>A technical note, for completeness:</strong> our database structure still contains older tables and fields that the App no longer uses (health entries were kept there before the architecture changed). The App neither writes to nor reads from them; your tracking records live on your device.</p>
+<p>The App does not ask for or hold your full name, date of birth, national ID number, phone number, location or profile photo.</p>
 <h3>2.3 Data that stays on your device and never reaches us</h3>
 <p>This is the App's largest data set:</p>
 <ul>
 <li>All of your tracking records (§2.1); in a single database file on your phone. That file sits in the App's own protected area (§9).</li>
 <li>There is no synchronization. The only authoritative copy of these records is the file on your device; there is no queue waiting to upload them and no background sync. That is why the tracking side works fully offline.</li>
-<li><strong>The computations happen on your device too:</strong> the result of the stage assessment, your cycle day, the insights derived from your symptom patterns, and content suggestions; none of them send data to a server.</li>
-<li>The free text you write yourself (reminder title, dose note) <strong>does not leave your device; it is included, in encrypted form</strong>, only in a backup you create yourself (§6).</li>
-<li><strong>Your tool preferences:</strong> breathing exercise duration, vibration, body scan duration.</li>
+<li>The computations happen on your device too: the result of the stage assessment, your cycle day, the insights derived from your symptom patterns, and content suggestions; none of them send data to a server.</li>
+<li>The free text you write yourself (reminder title, dose note) does not leave your device. It is included, in encrypted form, only in a backup you create yourself (§6).</li>
+<li>Your tool preferences: breathing exercise duration, vibration, body scan duration.</li>
 <li>Reminder notifications are scheduled by your device's own local notification system; notification contents are not sent to a server. Notification texts are deliberately generic; your medication name does not appear on your lock screen.</li>
-<li>Signing out does not delete these records (it only ends your session); deleting your account does (§8).</li>
+<li>These records are deleted when you delete your account, not when you sign out (§8).</li>
 </ul>
-<p>**We state the language preference separately from this list, because it is not strictly something that <em>"never reaches us"</em>:<strong> your choice is stored on your device and the App reads it from there (no connection needed), </strong>but a copy is also kept in your account metadata on the server** (§2.2). The reason is single and concrete: we need to send the verification and password-reset emails in your language, and the server prepares those emails, so it has to know which language you chose. This copy consists of nothing more than the value <code>tr</code> or <code>en</code>.</p>
-<p><strong>The cost is the same one again:</strong> because we hold no copy, if you lose your phone we cannot give your records back to you; that is why the backup path exists (§6).</p>
-<p><strong>One important exception, stated plainly:</strong> if your phone's iCloud/iTunes backup is enabled, the database file holding your health records is included in that backup and therefore goes to <strong>Apple's servers.</strong> This is not a transfer we initiate; it depends on your device's operating system setting. Even so, it is the <strong>one exception you do not start yourself</strong> to the statement <em>"your data does not leave your device"</em> (the other path is a backup you create yourself; §6), and you should know about it.</p>
+<p>One important exception: if your phone's iCloud/iTunes backup is enabled, the database file holding your health records is included in that backup and goes to Apple's servers. This is not a transfer we initiate; it depends on your device's operating system setting. Even so, it is the <strong>one exception you do not start yourself</strong> to the statement <em>"your data does not leave your device"</em> (the other path is a backup you create yourself).</p>
 <h3>2.4 What the underlying infrastructure keeps on its own</h3>
 <p>We do not write most of these records; the cloud infrastructure we use does. The last two rows, however, are written by our own server. We are the data controller, so we list them all:</p>
 <table>
@@ -224,10 +219,10 @@
 <td>If the email provider rejects the request while your verification or password-reset email is being sent, the server likewise writes a single-line entry: the HTTP status code, the provider's error code, the type of the email (verification or reset) and the sending language. <strong>The following are NOT written to this record:</strong> your email address, the verification link/token in the email, and the provider's descriptive message</td>
 </tr>
 </tbody></table>
-<p><strong>How long they are kept; there are two different answers and we give both:</strong></p>
+<p><strong>How long they are kept:</strong></p>
 <ul>
 <li>Authentication event logs (the first two rows of the table) are kept for at most 90 days; entries past that period are deleted on a regular schedule (§8).</li>
-<li>The providers' own operational logs and disaster-recovery backups are subject to their retention periods and are <strong>not within our control</strong>; we keep no separate archive of them.</li>
+<li>The providers' own operational logs and disaster-recovery backups are subject to their own retention periods and are not within our control.</li>
 </ul>
 <h2>3. Why do we process your data?</h2>
 <ol>
@@ -248,11 +243,15 @@
 </tr></thead><tbody>
 <tr>
 <td>Health data (§2.1)</td>
-<td><strong>Explicit consent</strong> (KVKK Art. 6/2). You may withdraw your consent at any time (§11).</td>
+<td>Explicit consent (KVKK Art. 6/2). You may withdraw your consent at any time (§11).</td>
 </tr>
 <tr>
 <td>Email address</td>
 <td>Establishment/performance of a contract (Art. 5/2-c)</td>
+</tr>
+<tr>
+<td>User ID (UUID), account state and timestamps</td>
+<td>Establishment/performance of a contract (Art. 5/2-c); required for your account and session to work</td>
 </tr>
 <tr>
 <td>Consent records</td>
@@ -303,46 +302,44 @@
 <p><strong>Apple is not in this table, because that is not a transfer we make:</strong> if your phone's iCloud/iTunes backup is on, the operating system backs up your health database file to Apple. That depends entirely on your own device setting and is stated plainly in §2.3.</p>
 <p><strong>Honesty note:</strong> the data processing agreements (DPAs) with the providers above are annexes to their terms of service and are <strong>in force</strong> upon acceptance of those terms; there is no separate wet signature.</p>
 <h2>6. Backups and exporting your data</h2>
-<p>Because your tracking records (symptoms, cycle, regimen, sleep…) exist only on your device, the App gives you a way to take your own backup in case you lose your phone. Here is how it works, stated without downplaying or overstating anything:</p>
+<p>Because your tracking records (symptoms, cycle, regimen, sleep…) exist only on your device, the App gives you a way to take your own backup against the risk of losing your phone.</p>
 <p><strong>You create the backup:</strong></p>
 <ul>
-<li>When you create a backup, you set a password. The backup file is encrypted with that password (AES-256-GCM; the key is derived from your password using Argon2id).</li>
-<li>Only you know this password. We do not store it and our server never sees it. <strong>If you forget it, nobody can open the backup; we cannot either, and we cannot recover it.</strong></li>
-<li>The file is a real <code>.zip</code> file; its contents are encrypted. Mail programs cannot display such an attachment inline in the message body, and the file's unencrypted outer container carries no explanatory text; the names and counts of your records stay inside the encryption.</li>
+<li>When you create a backup, you are asked to set a password. The backup file is encrypted with that password.</li>
+<li>Only you know this password. We do not store it and our server never sees it. If you forget it, the backup cannot be opened.</li>
 </ul>
 <p><strong>You can obtain the backup in two ways:</strong></p>
 <ol>
 <li>By sharing the file; you save it from your phone's share sheet to a destination you choose (Files, a cloud service, another device). On this path the file never passes through us.</li>
 <li>By sending it to your own email address; our server takes the file and sends it to your address via our email provider (Brevo).</li>
 </ol>
-<p><strong>Exactly what happens on the second path:</strong></p>
 <table>
 <thead><tr>
 <th></th>
 <th></th>
 </tr></thead><tbody>
 <tr>
-<td><strong>What is sent</strong></td>
+<td>What is sent</td>
 <td>Your encrypted backup file, your email address, and the subject line of the email</td>
 </tr>
 <tr>
-<td><strong>Who it is sent to</strong></td>
-<td>Only the verified email address of your own account. The App does not supply the address; the server derives it from your own session credentials. If you have not verified your email address, this path does not work</td>
+<td>Who it is sent to</td>
+<td>Only the verified email address of your own account. If you have not verified your email address, this path does not work</td>
 </tr>
 <tr>
-<td><strong>Can we open the file</strong></td>
+<td>Can we open the file</td>
 <td>No; the password is only yours. Neither we nor the provider can read the contents</td>
 </tr>
 <tr>
-<td><strong>Do we keep a copy</strong></td>
-<td>No. The server takes the file, hands it to the provider, and forgets it: it is written to no storage, to no database table, and its contents are recorded in no log</td>
+<td>Do we keep a copy</td>
+<td>No. It is written to no storage and to no database table, and its contents are recorded in no log</td>
 </tr>
 <tr>
-<td><strong>Where it is processed</strong></td>
-<td>The server function is pinned to the Frankfurt (Germany) region; the email provider is hosted in Belgium; so both are within the European Union</td>
+<td>Where it is processed</td>
+<td>Our email provider is located in Belgium</td>
 </tr>
 </tbody></table>
-<p><strong>We are not overstating this; the remaining risks:</strong></p>
+<p><strong>Points we want to draw your attention to:</strong></p>
 <ul>
 <li>Even encrypted, this is a transfer of personal data. The fact that we cannot open the file does not mean, in legal terms, that we are not processing data.</li>
 <li>The delivery is not anonymous. The sender address, the subject line and the file name identify Lumia. So even though the email provider cannot see inside the file, it does learn that <em>"this address uses Lumia."</em></li>
@@ -350,37 +347,33 @@
 <li>The file stays in your mailbox. Even if you delete your account, we cannot delete that copy; it is yours now.</li>
 </ul>
 <h2>7. Cross-border transfer</h2>
-<p>Our goal is to keep user data in Türkiye; today's infrastructure is abroad, and we say so plainly:</p>
 <ul>
-<li><strong>Your tracking records (symptoms, cycle, regimen, sleep) never go abroad</strong>; because they never go to a server at all (§2.0). This section is not about your health diary.</li>
 <li>The data processed abroad is your account data (§2.2) and the infrastructure records (§2.4). They are processed in the Frankfurt (Germany) region; the server function that runs when you email yourself a backup is pinned to the same region, and our email provider is in Belgium (§6); both within the European Union.</li>
 <li>The legal basis is your explicit consent (Article 9 of KVKK). We ask for your consent to the processing of your account data abroad as a separate item on the consent screen, and we keep a record of it. Because our server is abroad, the practical way to withdraw this consent is to delete your account (§8); we are not hiding that.</li>
-<li>Given the nature of this App, the mere fact that <em>"an email address is registered with Lumia"</em> may itself amount to a statement about health; that is why the transferred set is deliberately kept minimal (email + consent record), and your health diary is never moved abroad under any circumstances.</li>
+<li>Disclosure about possible risks: there is no adequacy decision announced by the Board for the countries the transfer is directed to; for as long as your data is processed abroad, exercising your rights may take longer than it would in Türkiye, and the Turkish authorities' ability to supervise processing abroad is more limited. On the other hand, Germany and Belgium, where our servers are located, are subject to EU data protection law (GDPR).</li>
+<li>Given the nature of this App, the mere fact that <em>"an email address is registered with Lumia"</em> may itself amount to a statement about health; that is why the transferred set is deliberately kept minimal (your account data and your consent record), and your health diary is never moved abroad under any circumstances.</li>
 </ul>
 <h2>8. How long do we keep your data?</h2>
 <ul>
 <li>The health records on your device stay on your device until you delete them. Deleting the App also removes them.</li>
 <li>Your account data is kept until you close your account.</li>
 <li>Your session and security logs (§2.4; your IP address, sign-in and sign-up events) are kept for at most 90 days, and entries past that period are deleted on a regular schedule. The infrastructure providers' own operational logs and disaster-recovery backups are outside this; they follow the provider's own periods (see the note below).</li>
-<li><strong>When you delete your account, two things happen together:</strong> 1. Your account on the server and all records linked to it are deleted (the one exception is the consent record, two bullets below); 2. The health database on your device is destroyed as well. If the deletion is interrupted (for example if you close the App), the remaining part is completed the next time the App opens. The operation cannot be undone.</li>
+<li>When you delete your account, two things happen together: 1. Your account on the server and all records linked to it are deleted (the one exception is the consent record, two bullets below); 2. The health database on your device is destroyed as well. If the deletion is interrupted (for example if you close the App), the remaining part is completed the next time the App opens. The operation cannot be undone.</li>
 <li>Your consent records are kept for 5 more years after your account is deleted, and are erased at the end of that period. The basis is Art. 5/2-e: we must be able to prove, even against a claim made after the account is closed, that consent was given and withdrawn. The record holds none of your health data; once the account is deleted it no longer contains your email address; only the random user ID (UUID) and the consent metadata remain.</li>
 </ul>
-<p><strong>There are two places deletion does not reach, and we say so plainly:</strong></p>
-<ol>
-<li>The infrastructure provider's disaster-recovery backups; copies in those backups remain for their own retention periods.</li>
-<li>The backup files you took yourself; an encrypted backup in your mailbox or saved to your own cloud remains in place even if you delete your account. Deleting it is up to you.</li>
-</ol>
 <h2>9. How is your data protected?</h2>
 <p><strong>For the data on your device:</strong></p>
 <ul>
 <li>The health database file sits in the App's own protected area; other apps on your phone cannot read it.</li>
 <li>Your phone's device encryption covers this file too; so while your phone is locked, the file is encrypted.</li>
-<li><strong>An honest limit:</strong> the database file itself is not additionally encrypted with a separate password on top of device encryption. We plan to add this later.</li>
-<li>Anyone who knows your phone's passcode can open the App. The App does not currently have its own separate passcode or biometric lock.</li>
+<li>An honest limit: the database file itself is not additionally encrypted with a separate password on top of device encryption.</li>
+<li>Anyone who knows your phone's passcode can open the App.</li>
 </ul>
 <p><strong>For the data on the server:</strong></p>
 <ul>
 <li>Each user can access only their own data. This is enforced at the database level with Row Level Security; so even a bug in the application code cannot expose another user's data.</li>
+<li>Data is encrypted in transit and at rest.</li>
+<li>Our staff do not view users' records in routine operations.</li>
 </ul>
 <p>We do not promise absolute security for any system; the above are the concrete measures we take.</p>
 <h2>10. Your rights under Article 11 of KVKK</h2>
@@ -399,26 +392,26 @@
 <p><strong>How to apply:</strong> by email <strong>from the email address registered to your account</strong> to destek@lumiaapp.net, or in writing to Çukurambar mah. Zeki Ergezen cad. 2/4, Çankaya/Ankara. Your request will be concluded within 30 days at the latest.</p>
 <p>From within the App you can also:</p>
 <ul>
-<li>✅ View and withdraw your explicit consent to health data processing from the Consent preferences screen (<strong>Profile → Privacy and data → Consent preferences</strong>): you can see what you consented to, with which version of the text and when; and withdraw it without sending a written request. §11 describes what happens when you do,</li>
+<li>View and withdraw your explicit consent to health data processing from the <strong>Consent preferences</strong> screen (<strong>Profile → Privacy and data → Consent preferences</strong>): you can see what you consented to, with which version of the text and when, and withdraw it; you do not need to send a written request. <strong>§11</strong> describes what happens when you do,</li>
 <li>Create and download an encrypted copy of your records from the Backup screen (§6),</li>
 <li>Delete account to permanently delete both your account on the server and your records on the device (§8),</li>
+<li>Sign out; this does not delete the records on your device; it only ends your session.</li>
 </ul>
-<p>✅ Withdrawing your consent now happens inside the App. Earlier versions announced this screen as upcoming; it has now shipped, and the first item in the list above tells you where to find it. The application address above has not closed; it stays open for your other Article 11 rights and for any problem you run into.</p>
+<p><strong>Withdrawing your consent now happens inside the App.</strong> Earlier versions announced this screen as <em>"upcoming"</em>; <strong>it has now shipped</strong> and the first item in the list above tells you where to find it. The <strong>application address above has not closed</strong>; it stays open for your other Article 11 rights and for any problem you run into.</p>
 <h2>11. What happens if you withdraw consent?</h2>
-<p>When you withdraw your explicit consent to the processing of health data, this is what happens; the list below describes what the App actually does:</p>
 <p><strong>What is deleted:</strong></p>
 <ul>
 <li>The personalization and tracking features that rely on this data stop working.</li>
-<li><strong>All of your health records on the device are deleted:</strong> your symptoms, your cycle, your hormone/medication regimen and dose records, your sleep diary, your reminders, the record of which articles you read, and your stage and stage assessment. (We count the reading record too, because §2.1 treats it as special category data; we do not carve out an exception to our own rule.)</li>
-<li>Your scheduled reminder notifications are cancelled (titles you wrote yourself will not appear on your phone again) and the <strong>backup reminder is turned off.</strong></li>
+<li>All of your health records on the device are deleted: your symptoms, your cycle, your hormone/medication regimen and dose records, your sleep diary, your reminders, the record of which articles you read, and your stage and stage assessment. (We count the reading record too, because §2.1 treats it as special category data; we do not carve out an exception to our own rule.)</li>
+<li>Your scheduled reminder notifications are cancelled (titles you wrote yourself will not appear on your phone again) and the backup reminder is turned off.</li>
 </ul>
 <p><strong>What is not deleted; and why:</strong></p>
 <ul>
-<li>Your account is not deleted. Your email address, your password and your session stay as they are; this is not an account deletion. If you also want to delete your account, that is a separate route (§8).</li>
-<li>Your consent record stays on the server, and a <em>"withdrawn"</em> entry is added on top of it (the existing record is not altered). We do this because we have to be able to show that you gave consent <strong>and that you withdrew it</strong> (Article 6/2 of KVKK; §2.0). That record contains none of your health data.</li>
-<li>Your language preference and app settings (for example the length of the breathing exercise) are kept; they are not health data and deleting them would gain you nothing.</li>
+<li><strong>Your account is not deleted.</strong> Your email address, your password and your session stay as they are; this is not an account deletion. If you also want to delete your account, that is a separate route (§8).</li>
+<li><strong>Your consent record stays on the server</strong>, and a <em>"withdrawn"</em> entry is added on top of it (the existing record is not altered). We do this because we have to be able to show that you gave consent <strong>and that you withdrew it</strong> (Article 6/2 of KVKK; §2.0). That record contains none of your health data.</li>
+<li><strong>Your language preference and app settings</strong> (for example the length of the breathing exercise) are kept; they are not health data and deleting them would gain you nothing.</li>
 </ul>
-<p>Withdrawal does not affect processing that was lawful before the date of withdrawal. <strong>You can change your mind again:</strong> after withdrawing, the App takes you back to the consent screen; if you want, you can consent again from there and start over; but <strong>the deleted records do not come back.</strong></p>
+<p>Withdrawal does not affect processing that was lawful before the date of withdrawal. You can change your mind again. After withdrawing, the App takes you back to the consent screen; if you want, you can consent again from there and start over. But the deleted records will not come back.</p>
 <p>Backup files you took earlier remain in your hands; deleting them is up to you.</p>
 <h2>12. Changes</h2>
 <p>When we update this notice we will change the effective date and announce significant changes from within the App. If a change broadens the scope of health data processing, we will ask for fresh explicit consent.</p>

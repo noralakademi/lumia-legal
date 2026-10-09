@@ -149,6 +149,11 @@
 <td>Kalıcı hesaba yükseltirsen</td>
 </tr>
 <tr>
+<td>Şifre özeti</td>
+<td>·</td>
+<td>Parolanın kendisini biz görmeyiz; kimlik altyapısı yönetir</td>
+</tr>
+<tr>
 <td>Takma ad</td>
 <td>·</td>
 <td>Boş bırakılabilir</td>
@@ -181,7 +186,7 @@
 <li>Hatırlatıcı bildirimleri cihazın kendi yerel bildirim sistemiyle planlanır. Bildirim içerikleri sunucuya gönderilmez. Bildirim metinleri bilinçli olarak geneldir, kilit ekranında ilaç adın görünmez.</li>
 <li>Kayıtlar çıkış yaptığında değil, hesabını sildiğinde silinir (8. bölüm).</li>
 </ul>
-<p>Önemli istisna: telefonunun iCloud/iTunes yedeği açıksa, sağlık kayıtlarının tutulduğu veritabanı dosyası o yedeğin içine girer ve Apple'ın sunucularına gider. Bu, bizim başlattığımız bir aktarım değildir; cihazının işletim sistemi ayarına bağlıdır. Yine de <em>"verin cihazından çıkmaz"</em> cümlesinin <strong>senin başlatmadığın tek istisnası</strong> budur (diğer yol, kendi yedeğini almandır.</p>
+<p>Önemli istisna: telefonunun iCloud/iTunes yedeği açıksa, sağlık kayıtlarının tutulduğu veritabanı dosyası o yedeğin içine girer ve Apple'ın sunucularına gider. Bu, bizim başlattığımız bir aktarım değildir; cihazının işletim sistemi ayarına bağlıdır. Yine de <em>"verin cihazından çıkmaz"</em> cümlesinin <strong>senin başlatmadığın tek istisnası</strong> budur (diğer yol, kendi yedeğini almandır).</p>
 <h3>2.4 Uygulamanın kullandığı altyapının kendi tuttukları</h3>
 <p>Bu kayıtların çoğunu biz yapmıyoruz, kullandığımız bulut altyapısı yapıyor. Son iki satırı ise sunucumuz kendisi yapıyor. Veri sorumlusu biz olduğumuzdan, hepsini listeliyoruz:</p>
 <table>
@@ -243,6 +248,10 @@
 <tr>
 <td>E-posta adresi</td>
 <td>Sözleşmenin kurulması/ifası (m.5/2-c)</td>
+</tr>
+<tr>
+<td>Kullanıcı kimliği (UUID), hesap durumu ve zamanları</td>
+<td>Sözleşmenin kurulması/ifası (m.5/2-c); hesabın ve oturumun çalışması için zorunludur</td>
 </tr>
 <tr>
 <td>Rıza kayıtları</td>
@@ -341,7 +350,8 @@
 <ul>
 <li>Yurt dışında işlenen veriler hesap verilerin (2.2 bölümü) ve altyapı kayıtlarıdır (2.4 bölümü). Bunlar Frankfurt (Almanya) bölgesinde işlenir. Yedeğini e-postayla gönderirken devreye giren sunucu işlevi aynı bölgeye sabitlenmiştir ve e-posta sağlayıcımız Belçika'dadır (6. bölüm). İkisi de Avrupa Birliği içindedir.</li>
 <li>Hukuki dayanak, açık rızandır (KVKK m.9). Hesap verilerinin yurt dışında işlenmesine ilişkin rızanı, rıza ekranında ayrı bir madde olarak isteriz ve kaydını tutarız. Sunucumuz yurt dışında olduğu için bu rızayı geri almanın pratik karşılığı hesabını silmektir (8. bölüm); bunu gizlemiyoruz.</li>
-<li>Bu Uygulamanın niteliği gereği <em>"Lumia'da kayıtlı bir e-posta adresi"</em> bilgisi tek başına bir sağlık beyanı sayılabilir. Aktarılan küme bu yüzden bilinçli olarak asgaride tutulur (e-posta + rıza kaydı) ve sağlık günlüğün hiçbir koşulda yurt dışına taşınmaz.</li>
+<li>Muhtemel riskler konusunda bilgilendirme: aktarımın yöneldiği ülkeler için Kurul tarafından ilan edilmiş bir yeterlilik kararı bulunmamaktadır; verin yurt dışında işlendiği sürece haklarını kullanman Türkiye'dekine göre gecikebilir ve Türk makamlarının yurt dışındaki işleme üzerindeki denetim imkânı daha sınırlıdır. Buna karşılık sunucularımızın bulunduğu Almanya ve Belçika, AB veri koruma hukukuna (GDPR) tabidir.</li>
+<li>Bu Uygulamanın niteliği gereği <em>"Lumia'da kayıtlı bir e-posta adresi"</em> bilgisi tek başına bir sağlık beyanı sayılabilir. Aktarılan küme bu yüzden bilinçli olarak asgaride tutulur (hesap verilerin ve rıza kaydın) ve sağlık günlüğün hiçbir koşulda yurt dışına taşınmaz.</li>
 </ul>
 <h2>8. Verilerini ne kadar süre saklıyoruz?</h2>
 <ul>
@@ -362,16 +372,19 @@
 <p><strong>Sunucudaki veriler için:</strong></p>
 <ul>
 <li>Her kullanıcı yalnızca kendi verisine erişebilir. Bu, veritabanı seviyesinde satır düzeyi güvenlik (Row Level Security) ile zorunlu kılınmıştır. Uygulama kodundaki bir hata bile başka bir kullanıcının verisini açığa çıkaramaz.</li>
+<li>Veriler aktarımda ve saklamada şifrelenir.</li>
+<li>Uygulama personeli, işleyişte kullanıcıların kayıtlarını görüntüleyemez.</li>
 </ul>
 <p>Hiçbir sistem için mutlak güvenlik sözü vermiyoruz. Yukarıdakiler aldığımız somut önlemlerdir.</p>
-<h2>10. KVKK m.11 kapsamındaki haklarını</h2>
+<h2>10. KVKK m.11 kapsamındaki hakların</h2>
 <p>KVKK m.11 uyarınca, bize başvurarak: kişisel verinin işlenip işlenmediğini ve işlendiyse buna ilişkin bilgiyi, işlenme amacını ve amaca uygun kullanılıp kullanılmadığını, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri öğrenme; eksik veya yanlış işlenmişse düzeltilmesini, silinmesini veya yok edilmesini ve bu işlemlerin verinin aktarıldığı üçüncü kişilere bildirilmesini isteme; münhasıran otomatik sistemlerle yapılan analiz sonucunda aleyhine çıkan bir sonuca itiraz etme; kanuna aykırı işleme nedeniyle zarara uğrarsan zararın giderilmesini talep etme haklarına sahipsin.</p>
-<p>Başvuruyu hesabına kayıtlı e-posta adresinden destek@lumiaapp.net adresine e-postayla, veya Çukurambar mah. Zeki Ergezen cad. 2/4, Çankaya/Ankara adresine yazılı olarak yapılabilirsin. Başvurun en geç 30 gün içinde sonuçlandırılır.</p>
+<p>Başvurunu, hesabına kayıtlı e-posta adresinden destek@lumiaapp.net adresine e-postayla veya Çukurambar mah. Zeki Ergezen cad. 2/4, Çankaya/Ankara adresine yazılı olarak yapabilirsin. Başvurun en geç 30 gün içinde sonuçlandırılır.</p>
 <p>Uygulama içinden ayrıca:</p>
 <ul>
 <li><strong>Rıza tercihleri</strong> ekranından (<strong>Profil → Gizlilik ve veri → Rıza tercihleri</strong>) sağlık verisi işlemeye verdiğin açık rızayı <strong>görebilir</strong> (ne için, hangi metin sürümüyle, ne zaman verdin) ve <strong>geri alabilirsin</strong>; yazılı başvuru göndermene gerek yok. Geri aldığında ne olacağını <strong>11. bölüm</strong> anlatır,</li>
 <li><strong>Yedekleme</strong> ekranından kayıtlarının şifreli bir kopyasını <strong>oluşturabilir ve indirebilirsin</strong> (6. bölüm),</li>
 <li><strong>Hesabı sil</strong> ile hem sunucudaki hesabını hem cihazındaki kayıtlarını kalıcı olarak silebilirsin (8. bölüm),</li>
+<li><strong>Çıkış yap</strong> cihazındaki kayıtlarını <strong>silmez</strong>; yalnızca oturumunu kapatır.</li>
 </ul>
 <p><strong>Rızanı geri alma yolu artık uygulamanın içinde.</strong> Önceki sürümlerde bu ekran <em>"hazırlanıyor"</em> diye duyuruluyordu; <strong>artık yayında</strong> ve yukarıdaki listenin ilk maddesinde yolu yazılı. Yukarıdaki <strong>başvuru adresi kapanmadı</strong>; m.11'in diğer hakları ve her türlü sorun için açık kalmaya devam ediyor.</p>
 <h2>11. Rızanı geri alırsan ne olur?</h2>
@@ -383,7 +396,7 @@
 </ul>
 <p><strong>Silinmeyenler ve nedenleri:</strong></p>
 <ul>
-<li><strong>Hesabın silinmez.</strong> E-posta adresin, şifren ve oturumun yerinde kalır; bu bir hesap silme işlemi değildir. Hesabını da silmek istersen o ayrı bir yoldur (<strong>8</strong>).</li>
+<li><strong>Hesabın silinmez.</strong> E-posta adresin, şifren ve oturumun yerinde kalır; bu bir hesap silme işlemi değildir. Hesabını da silmek istersen o ayrı bir yoldur (8. bölüm).</li>
 <li><strong>Rıza kaydın sunucuda kalır</strong> ve üstüne bir <em>"geri aldı"</em> kaydı eklenir (var olan kayıt değiştirilmez). Bunu, rızanı aldığımızı ve geri aldığını gösterebilmek zorunda olduğumuz için yapıyoruz (KVKK m.6/2; 2.0). Bu kaydın içinde hiçbir sağlık verin yoktur.</li>
 <li><strong>Dil tercihin ve uygulama ayarların</strong> (ör. nefes egzersizinin süresi) korunur; bunlar sağlık verisi değildir ve silinmeleri sana bir şey kazandırmaz.</li>
 </ul>
