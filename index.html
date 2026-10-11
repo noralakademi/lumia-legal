@@ -23,6 +23,10 @@
           </form>
           <p id="hata" style="display:none;margin:14px 0 0;font-size:14px;line-height:1.5;color:#B5673F;"></p>
         </div>
+        <div id="baglantiHatasi" style="display:none;">
+          <h1 style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#1F220F;font-weight:500;" id="t_hata_baslik">Bağlantı geçersiz</h1>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#3C4426;" id="t_hata_metin">Bu bağlantının süresi dolmuş ya da daha önce kullanılmış. Uygulamadan yeni bir bağlantı iste.</p>
+        </div>
         <div id="basarili" style="display:none;">
           <h1 style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#1F220F;font-weight:500;" id="t_ok_baslik">Şifren güncellendi ✓</h1>
           <p style="margin:0;font-size:15px;line-height:1.6;color:#3C4426;" id="t_ok_metin">Bu sekmeyi kapatıp uygulamaya dönebilir, yeni şifrenle giriş yapabilirsin.</p>
@@ -61,7 +65,9 @@
           eslesmiyor: 'Girdiğin iki şifre birbiriyle eşleşmiyor.',
           ayni: 'Yeni şifre eskisiyle aynı olamaz — farklı bir şifre seç.',
           zayif: 'Bu şifre çok zayıf — daha uzun/farklı bir şifre dene.',
-          genel: 'Bir şeyler ters gitti. Lütfen tekrar dene.'
+          genel: 'Bir şeyler ters gitti. Lütfen tekrar dene.',
+          hataBaslik: 'Bağlantı geçersiz',
+          hataMetin: 'Bu bağlantının süresi dolmuş ya da daha önce kullanılmış. Uygulamadan yeni bir bağlantı iste.'
         },
         en: {
           baslik: 'Lumia \u2014 Verified',
@@ -78,7 +84,9 @@
           eslesmiyor: 'The two passwords you entered do not match.',
           ayni: 'Your new password cannot be the same as the old one — choose a different one.',
           zayif: 'That password is too weak — try a longer or different one.',
-          genel: 'Something went wrong. Please try again.'
+          genel: 'Something went wrong. Please try again.',
+          hataBaslik: 'Link is invalid',
+          hataMetin: 'This link has expired or has already been used. Request a new one from the app.'
         }
       };
       var DIL = (navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
@@ -92,6 +100,8 @@
         };
         yaz('t_onay_baslik', M.onayBaslik);
         yaz('t_onay_metin', M.onayMetin);
+        yaz('t_hata_baslik', M.hataBaslik);
+        yaz('t_hata_metin', M.hataMetin);
         yaz('t_form_baslik', M.formBaslik);
         yaz('t_form_metin', M.formMetin);
         yaz('t_kaydet', M.kaydet);
@@ -126,21 +136,86 @@
       // onlarda BUGÜNKÜ "Doğrulandı" görünümünde kalır (additive).
       (function () {
         try {
+          // 🔴 PRODUCTION (11 Eki 2026, K-RK-5). Beta prod'la koşuyor;
+          // bu sayfa prod'un kimlik akışına hizmet eder. Yayınlanabilir
+          // anahtar sır DEĞİLDİR ve commit'lenir (CLAUDE.md).
+          // ⚠️ Tek sayfa yayınlanıyor: dev'in şifre sıfırlaması artık bu
+          // sayfadan GEÇMEZ (bilinçli kabul — docs/store/prod-kurulum.md §9.2).
           var client = supabase.createClient(
-            'https://bvjsmutsyqpkvxpukzwo.supabase.co',
-            'sb_publishable_r9vRoVDHaHm4okh4kO05-A_vfPfRe1o'
+            'https://hohznkrzvzwjczujrnoc.supabase.co',
+            'sb_publishable_vsIbmgReVHzc3ltoWVVOZw_i0gCHmAC',
+            // 🔴 Fragment'ı SDK'ya DEĞİL, BİZ çözüyoruz (bu sayfanın
+            // 2026-09-06 dersi: "SDK kendisi çözer" varsayımı bir kez
+            // yanlış çıktı). Kapalı olmazsa SDK hash'i bizden önce
+            // tüketir ve aşağıdaki dal boş bir hash görür.
+            { auth: { detectSessionInUrl: false } }
           );
+
+          var goster = function (id) {
+            ['onaylandi', 'sifreFormu', 'basarili', 'baglantiHatasi']
+              .forEach(function (b) {
+                var e = document.getElementById(b);
+                if (e) { e.style.display = (b === id) ? 'block' : 'none'; }
+              });
+          };
+          var urliTemizle = function () {
+            window.history.replaceState(
+              window.history.state, '', window.location.pathname
+            );
+          };
+
           var params = new URLSearchParams(window.location.search);
           var tokenHash = params.get('token_hash');
           var type = params.get('type');
-          if (tokenHash && type === 'recovery') {
-            client.auth.verifyOtp({ type: 'recovery', token_hash: tokenHash }).then(function (sonuc) {
-              if (sonuc.error) return;
-              document.getElementById('onaylandi').style.display = 'none';
-              document.getElementById('sifreFormu').style.display = 'block';
-              var temizUrl = window.location.pathname;
-              window.history.replaceState(window.history.state, '', temizUrl);
+
+          // 🔴 FRAGMENT — 11 Eki 2026'da prod kurulumunda ÖLÇÜLEREK eklendi.
+          // Hook devredeyken bağlantı önce `/auth/v1/verify`ye gider; o uç
+          // jetonu tüketip bu sayfaya SORGU DİZESİYLE değil FRAGMENT'la
+          // döner. Eski kod yalnız sorgu dizesine bakıyordu, yani hook
+          // yolunda şifre formu HİÇ AÇILMIYORDU ve sayfa buna rağmen
+          // "Doğrulandı ✓" gösteriyordu (canlı doğrulandı: geçerli bir
+          // jetonla bile form çıkmadı).
+          var h = new URLSearchParams(
+            (window.location.hash || '').replace(/^#/, '')
+          );
+          var hataKodu = h.get('error_code') || h.get('error');
+          var erisimJetonu = h.get('access_token');
+          var tazelemeJetonu = h.get('refresh_token');
+          var hashTuru = h.get('type');
+
+          if (hataKodu) {
+            // 🔴 DÜRÜSTLÜK: başarısız bir doğrulamada "Doğrulandı ✓"
+            // göstermek kullanıcıya YANLIŞ söyler ve onu uygulamaya geri
+            // yollar. Eski sayfa tam bunu yapıyordu.
+            goster('baglantiHatasi');
+            urliTemizle();
+          } else if (erisimJetonu && tazelemeJetonu && hashTuru === 'recovery') {
+            client.auth.setSession({
+              access_token: erisimJetonu,
+              refresh_token: tazelemeJetonu
+            }).then(function (sonuc) {
+              if (sonuc.error) { goster('baglantiHatasi'); urliTemizle(); return; }
+              goster('sifreFormu');
+              urliTemizle();
+            }).catch(function () {
+              goster('baglantiHatasi');
+              urliTemizle();
             });
+          } else if (tokenHash && type === 'recovery') {
+            // GERİ ALMA yolu (hook KAPALI): Dashboard'daki TR şablonu bu
+            // sayfaya doğrudan `?token_hash=…&type=recovery` ile linkler.
+            // Bu dal DEĞİŞMEDEN kalır — iki yol da çalışmalıdır.
+            client.auth.verifyOtp({ type: 'recovery', token_hash: tokenHash }).then(function (sonuc) {
+              if (sonuc.error) { goster('baglantiHatasi'); urliTemizle(); return; }
+              goster('sifreFormu');
+              urliTemizle();
+            });
+          } else if (erisimJetonu) {
+            // Kayıt onayı / e-posta değişikliği: "Doğrulandı ✓" DOĞRUDUR.
+            // Ama bu sekmede ASILI bir oturum bırakmayalım (ortak
+            // bilgisayar) — sayfanın şifre güncellemeden sonraki
+            // `signOut()` kaygısının aynısı.
+            urliTemizle();
           }
           document.getElementById('form').addEventListener('submit', function (e) {
             e.preventDefault();
