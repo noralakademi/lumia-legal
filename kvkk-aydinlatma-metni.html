@@ -70,7 +70,7 @@
 <tr>
 <td><strong>Sağlık kayıtların</strong></td>
 <td>Yalnızca telefonunda</td>
-<td>Semptomların, döngün, hormon/ilaç rejimin ve doz kayıtların, uyku günlüğün, hatırlatıcıların, okuduğun makaleler, evren ve evre değerlendirmen</td>
+<td>Semptomların, döngün, hormon ilaçların ve doz kayıtların, uyku günlüğün, hatırlatıcıların, okuduğun makaleler, evren ve evre değerlendirmen</td>
 </tr>
 <tr>
 <td><strong>Hesabın</strong></td>
@@ -110,8 +110,8 @@
 <td>Cihazında</td>
 </tr>
 <tr>
-<td>Hormon/ilaç rejimi</td>
-<td>Kullandığın rejimin adı, biçimi, <strong>kendi yazdığın doz notu</strong>, saatleri ve aldın/almadın kayıtları</td>
+<td>Hormonların/ilaçların</td>
+<td>Kullandığın ilacın <strong>kendi yazdığın adı</strong>, biçimi, <strong>kendi yazdığın doz notu</strong>, saatleri ve aldın/almadın kayıtları</td>
 <td>Cihazında</td>
 </tr>
 <tr>
@@ -226,7 +226,7 @@
 </ul>
 <h2>3. Verilerini hangi amaçlarla işliyoruz?</h2>
 <ol>
-<li><strong>Uygulamanın temel işlevini sunmak:</strong> semptom, döngü, rejim ve uyku kayıtlarını cihazında saklamak ve sana geri göstermek.</li>
+<li><strong>Uygulamanın temel işlevini sunmak:</strong> semptom, döngü, ilaçlar ve uyku kayıtlarını cihazında saklamak ve sana geri göstermek.</li>
 <li><strong>Kişiselleştirme:</strong> evrene ve kaydettiğin semptomlara göre içerik ve araç önermek. Bu hesaplama cihazında yapılır.</li>
 <li><strong>Hatırlatma:</strong> kurduğun hatırlatıcıları zamanında göstermek.</li>
 <li><strong>Hesap güvenliği ve yönetimi:</strong> giriş, e-posta doğrulama, şifre sıfırlama, hesap silme. Bu e-postaları seçtiğin dilde gönderebilmek için dil tercihinin bir kopyası hesap üstverinde tutulur (2.2, 2.3).</li>
@@ -280,7 +280,7 @@
 <tr>
 <td><strong>Supabase</strong> (altyapı/barındırma)</td>
 <td>Veritabanı, kimlik doğrulama, sunucu işlevleri</td>
-<td>Yalnızca 2.2'deki veriler (hesabın, rıza kaydın) ve 2.4'teki altyapı kayıtları. Takip kayıtların (semptom, döngü, rejim, uyku; 2.1) buraya gönderilmez.</td>
+<td>Yalnızca 2.2'deki veriler (hesabın, rıza kaydın) ve 2.4'teki altyapı kayıtları. Takip kayıtların (semptom, döngü, ilaçlar, uyku; 2.1) buraya gönderilmez.</td>
 </tr>
 <tr>
 <td><strong>Brevo</strong> (e-posta gönderimi)</td>
@@ -302,7 +302,7 @@
 <p>Apple bu tabloda yer almaz, çünkü o bizim yaptığımız bir aktarım değildir: telefonunun iCloud/iTunes yedeği açıksa, işletim sistemi sağlık veritabanı dosyanı Apple'a yedekler. Bu tamamen senin cihaz ayarına bağlıdır ve 2.3'te açıkça anlatılmıştır.</p>
 <p>Yukarıdaki sağlayıcılarla veri işleme sözleşmeleri (DPA), sağlayıcıların hizmet şartlarının eki olarak düzenlenmiştir ve bu şartların kabulüyle <strong>yürürlüktedir</strong>, ayrıca atılan bir ıslak imza yoktur.</p>
 <h2>6. Yedekleme ve verilerini dışa aktarma</h2>
-<p>Takip kayıtların (semptom, döngü, rejim, uyku…) yalnızca cihazında olduğu için, telefonunu kaybetme riskine karşı Uygulama sana kendi yedeğini alma yolunu sunar.</p>
+<p>Takip kayıtların (semptom, döngü, ilaçlar, uyku…) yalnızca cihazında olduğu için, telefonunu kaybetme riskine karşı Uygulama sana kendi yedeğini alma yolunu sunar.</p>
 <p><strong>Yedeği sen oluşturursun:</strong></p>
 <ul>
 <li>Yedek alırken senden bir parola tanımlaman istenir. Yedek dosyası bu parolayla şifrelenir.</li>
@@ -391,7 +391,7 @@
 <p><strong>Silinenler:</strong></p>
 <ul>
 <li>Bu veriye dayanan kişiselleştirme ve takip özellikleri çalışmaz.</li>
-<li>Cihazındaki sağlık kayıtlarının tamamı silinir: semptomların, döngün, hormon/ilaç rejimin ve doz kayıtların, uyku günlüğün, hatırlatıcıların, hangi makaleyi okuduğunun kaydı ve evren ile evre değerlendirmen. (Okuma kaydını da sayıyoruz çünkü 2.1'de onu özel nitelikli sayıyoruz, kendi kuralımıza istisna açmıyoruz.)</li>
+<li>Cihazındaki sağlık kayıtlarının tamamı silinir: semptomların, döngün, hormonların/ilaçların ve doz kayıtların, uyku günlüğün, hatırlatıcıların, hangi makaleyi okuduğunun kaydı ve evren ile evre değerlendirmen. (Okuma kaydını da sayıyoruz çünkü 2.1'de onu özel nitelikli sayıyoruz, kendi kuralımıza istisna açmıyoruz.)</li>
 <li>Kurulmuş hatırlatıcı bildirimlerin iptal edilir (kendi yazdığın başlıklar telefonunun ekranında bir daha görünmez) ve yedek alma hatırlatması kapatılır.</li>
 </ul>
 <p><strong>Silinmeyenler ve nedenleri:</strong></p>
