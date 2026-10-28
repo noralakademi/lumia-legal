@@ -74,6 +74,7 @@
 <li>Hangi makaleyi okuduğun</li>
 <li>Uygulama ayarların (nefes egzersizi süresi, titreşim gibi)</li>
 </ul>
+<p>Kullanım ölçümü bu listedeki hiçbir kaydı göndermez (4.1).</p>
 <p><em>Tek istisna senin kendi ayarın olabilir:</em> telefonunun iCloud yedeği açıksa, işletim sistemi bu dosyayı da yedekleyecektir. Bu yedek Apple'ın altyapısındadır ve bizim kontrolümüzde değildir.</p>
 <h3>2.2 Sunucuda tutulan veriler</h3>
 <ul>
@@ -86,7 +87,7 @@
 <h3>2.3 İŞLEMEDİĞİMİZ veriler</h3>
 <ul>
 <li><strong>Reklam tanımlayıcısı yok</strong>, reklam ağı yok.</li>
-<li><strong>Analitik/izleme sağlayıcısı yok.</strong></li>
+<li><strong>Çapraz uygulama ve çapraz site izlemesi yok</strong> (4.1).</li>
 <li><strong>Konum verisi yok.</strong></li>
 <li><strong>Rehber, fotoğraf, mikrofon veya kamera erişimi yok.</strong></li>
 <li><strong>Veri simsarlarına satış yok.</strong> Hiçbir veriyi satmıyor, kiralamıyor veya reklam amacıyla paylaşmıyoruz.</li>
@@ -123,6 +124,10 @@
 <td>Uygulamanın temel işlevi (takip, içerik, hatırlatıcı)</td>
 <td>2.1'deki veriler cihazında tutulur. Bizim erişimimiz yoktur</td>
 </tr>
+<tr>
+<td>Uygulamayı geliştirmek (kullanım ölçümü)</td>
+<td>4.1'deki ölçüm verileri; yalnızca onay verirsen</td>
+</tr>
 </tbody></table>
 <p>Profilleme, otomatik karar verme, davranışsal reklam <em>yapmıyoruz</em>.</p>
 <hr>
@@ -144,6 +149,11 @@
 <td>E-posta adresin, yedek gönderiminde ayrıca e-postanın konusu ve <strong>şifreli</strong> yedek dosyan</td>
 </tr>
 <tr>
+<td><strong>PostHog, Inc.</strong> (kullanım ölçümü)</td>
+<td>Depolama: Frankfurt, Almanya (AB) · İşleme: ABD dahil Avrupa dışı ülkeler</td>
+<td>Yalnızca 4.1'deki ölçüm verileri; yalnızca onay verdiysen</td>
+</tr>
+<tr>
 <td>Yetkili kamu kurumları</td>
 <td>·</td>
 <td>Yalnızca kanuni bir talep hâlinde, talebin kapsamıyla sınırlı</td>
@@ -152,6 +162,12 @@
 <p>Bunların dışında <strong>hiçbir üçüncü tarafa aktarım yapmıyoruz.</strong></p>
 <p><strong>Apple bu tabloda yer bulunmuyor, çünkü o bizim yaptığımız bir aktarım değil:</strong> telefonunun iCloud yedeği açıksa, işletim sistemi 2.1'deki yerel veritabanı dosyasını Apple'a yedekler. Bu tamamen senin cihaz ayarına bağlıdır (bkz. 2.1'deki not).</p>
 <p><strong>Dürüstlük notu:</strong> bu sağlayıcılarla veri işleme sözleşmeleri (DPA), sağlayıcıların hizmet şartlarının eki olarak düzenlenmiştir ve bu şartların kabulüyle <strong>yürürlüktedir</strong>.</p>
+<hr>
+<h2>4.1 Kullanım ölçümü</h2>
+<p>Uygulamayı geliştirebilmek için, uygulamayı nasıl kullandığını ölçüyoruz: hangi ekranı ve aracı açtığın, kurulum adımlarının neresinde olduğun, bir kaydı hangi alanda oluşturduğun ve uygulamanın nerede hata verdiği.</p>
+<p><strong>Semptom, döngü ve ilaç kayıtların bu ölçüme katılmaz</strong>; uyku günlüğün, notların ve menopoz evren de katılmaz. Bir kaydın içeriği hiçbir koşulda gönderilmez. Hangi makaleyi okuduğun da gönderilmez.</p>
+<p>Ölçüm cihazında üretilen rastgele bir kimlikle yapılır ve hesabınla birleştirilmez. Zorunlu değildir: yalnızca onay verirsen çalışır, uygulamanın hiçbir özelliği buna bağlı değildir ve istediğin an <strong>Profil → Gizlilik ve veri → Rıza tercihleri → Kullanım istatistikleri</strong>'nden kapatabilirsin.</p>
+<p>Ölçümü bizim adımıza <strong>PostHog, Inc.</strong> (ABD) yapar; veri Frankfurt'ta depolanır ama ABD dahil Avrupa dışı ülkelerden işlenir ve sağlayıcıda sınırlı bir süre saklanır. Bunun dayanağı açık rızandır. Ayrıntısı Aydınlatma Metni 5.1'dedir.</p>
 <hr>
 <h2>5. Verilerin nerede işleniyor?</h2>
 <p>2.2 maddesinde belirtilen veriler için kullandığımız sunucular bugün Frankfurt'tadır (Almanya).</p>
@@ -190,6 +206,10 @@
 <td>Oturum/güvenlik kayıtları</td>
 <td>En çok 90 gün tutulur. Altyapı ve e-posta sağlayıcılarımızın teknik logları, onların kendi saklama süreleri sonunda silinir</td>
 </tr>
+<tr>
+<td>Kullanım ölçümü kayıtları</td>
+<td>Sağlayıcıda sınırlı bir süre saklanır ve ardından silinir; süreyi sağlayıcının saklama politikası belirler (4.1)</td>
+</tr>
 </tbody></table>
 <hr>
 <h2>8. Haklarının karşılığı uygulamada nerede?</h2>
@@ -201,6 +221,10 @@
 <tr>
 <td>Rızamı geri almak</td>
 <td>Profil → Gizlilik ve veri → Rıza tercihleri</td>
+</tr>
+<tr>
+<td>Kullanım ölçümünü kapatmak</td>
+<td>Profil → Gizlilik ve veri → Rıza tercihleri → Kullanım istatistikleri</td>
 </tr>
 <tr>
 <td>Verilerimin kopyasını almak</td>

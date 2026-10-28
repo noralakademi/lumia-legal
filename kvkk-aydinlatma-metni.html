@@ -232,8 +232,9 @@
 <li><strong>Hesap güvenliği ve yönetimi:</strong> giriş, e-posta doğrulama, şifre sıfırlama, hesap silme. Bu e-postaları seçtiğin dilde gönderebilmek için dil tercihinin bir kopyası hesap üstverinde tutulur (2.2, 2.3).</li>
 <li><strong>Yedeğini göndermek:</strong> istediğinde şifreli yedek dosyanı oluşturmak ve doğrulanmış e-posta adresine göndermek (6. bölüm).</li>
 <li><strong>Yasal yükümlülüklerin yerine getirilmesi:</strong> rıza kayıtlarının saklanması, yetkili kurum taleplerinin karşılanması.</li>
+<li><strong>Uygulamayı geliştirmek:</strong> hangi ekranların kullanıldığını, kurulum akışının neresinde zorlandığını ve uygulamanın nerede hata verdiğini ölçmek. Bu ölçüm yalnızca ayrıca onay verirsen çalışır (5.1).</li>
 </ol>
-<p><strong>Yapmadıklarımız:</strong> Verilerini reklam veya pazarlama amacıyla kullanmıyoruz, üçüncü taraflara satmıyoruz, profil çıkarıp reklam ağlarıyla paylaşmıyoruz. Uygulamada reklam ağı, analitik aracı veya çökme bildirimi aracı bulunmuyor. Uygulama tıbbi tanı koymaz, doz veya reçete önermez. Gönderdiğimiz e-postalar hiçbir uzak görsel yüklemez, yani e-postayı açıp açmadığını takip etmiyoruz.</p>
+<p><strong>Yapmadıklarımız:</strong> Verilerini reklam veya pazarlama amacıyla kullanmıyoruz, üçüncü taraflara satmıyoruz, profil çıkarıp reklam ağlarıyla paylaşmıyoruz. Uygulamada reklam ağı bulunmuyor. Uygulamayı nasıl kullandığını ve nerede hata aldığını ölçen bir araç ise var; yalnızca senin açık onayınla çalışır (5.1). Uygulama tıbbi tanı koymaz, doz veya reçete önermez. Gönderdiğimiz e-postalar hiçbir uzak görsel yüklemez, yani e-postayı açıp açmadığını takip etmiyoruz.</p>
 <h2>4. Hukuki sebepler</h2>
 <p><strong>Toplama yöntemi:</strong> kişisel verilerin, Uygulama ve ona bağlı sunucu altyapısı üzerinden, tamamen veya kısmen otomatik yollarla elektronik ortamda toplanır. Her veri türünün dayandığı hukuki sebep aşağıdadır:</p>
 <table>
@@ -269,6 +270,10 @@
 <td>Oturum, IP ve güvenlik kayıtları</td>
 <td>Meşru menfaat (m.5/2-f); hesap güvenliği</td>
 </tr>
+<tr>
+<td>Kullanım ve hata kayıtları (5.1 bölümü)</td>
+<td>Açık rıza (KVKK m.5/1). Yurt dışında işlenmesi için de açık rıza (m.9; 7). Zorunlu değildir; rızanı dilediğin an geri alabilirsin (11. bölüm)</td>
+</tr>
 </tbody></table>
 <h2>5. Verilerini kimlerle paylaşıyoruz?</h2>
 <table>
@@ -293,14 +298,42 @@
 <td>Yalnızca e-posta adresin</td>
 </tr>
 <tr>
+<td><strong>PostHog, Inc.</strong> (kullanım ölçümü)</td>
+<td>Uygulamanın nasıl kullanıldığını ve nerede hata verdiğini ölçmek</td>
+<td>Yalnızca 5.1'de sayılan ölçüm verileri ve cihazında üretilen rastgele ölçüm kimliği. Sağlık kayıtların (2.1), hesap kimliğin ve e-posta adresin buraya gönderilmez. Yalnızca açık rıza verdiysen</td>
+</tr>
+<tr>
 <td>Yetkili kamu kurum ve kuruluşları</td>
 <td>Kanuni talep hâlinde</td>
 <td>Talebin kapsamıyla sınırlı</td>
 </tr>
 </tbody></table>
-<p>Bunların dışında başka bir üçüncü tarafa aktarım yapmıyoruz. Reklam ağı, analitik sağlayıcı veya veri simsarı kullanılmamaktadır.</p>
+<p>Bunların dışında başka bir üçüncü tarafa aktarım yapmıyoruz. Reklam ağı veya veri simsarı kullanılmamaktadır. Kullanım ölçümü için çalıştığımız sağlayıcı yukarıdaki tabloda yer alır (5.1).</p>
 <p>Apple bu tabloda yer almaz, çünkü o bizim yaptığımız bir aktarım değildir: telefonunun iCloud/iTunes yedeği açıksa, işletim sistemi sağlık veritabanı dosyanı Apple'a yedekler. Bu tamamen senin cihaz ayarına bağlıdır ve 2.3'te açıkça anlatılmıştır.</p>
 <p>Yukarıdaki sağlayıcılarla veri işleme sözleşmeleri (DPA), sağlayıcıların hizmet şartlarının eki olarak düzenlenmiştir ve bu şartların kabulüyle <strong>yürürlüktedir</strong>, ayrıca atılan bir ıslak imza yoktur.</p>
+<h2>5.1 Kullanım ölçümü</h2>
+<p>Uygulamayı geliştirebilmek için, uygulamayı nasıl kullandığını ölçüyoruz: hangi ekranlar işine yarıyor, hangileri hiç açılmıyor, ilk kurulum adımlarının neresinde zorlanıyorsun ve uygulama nerede hata veriyor. Bu ölçüm zorunlu değildir; yalnızca rıza ekranındaki ilgili maddeye ayrıca onay verirsen çalışır. Onay vermezsen uygulamanın tamamını aynı şekilde kullanmaya devam edersin, hiçbir özellik kapanmaz.</p>
+<p>Ölçümde bize ulaşanlar şunlardır:</p>
+<ul>
+<li>hangi ekranı veya aracı açtığın ve hangi sekmeye geçtiğin;</li>
+<li>bir kaydı hangi alanda oluşturduğun — örneğin bunun bir semptom kaydı mı, bir uyku kaydı mı olduğu; <strong>kaydın kendisi değil</strong>;</li>
+<li>ilk kurulum akışında kaçıncı adımda olduğun (adımın numarası);</li>
+<li>bir içeriği veya aracı açtığın, tamamladığın ya da yarıda bıraktığın;</li>
+<li>uygulamanın hata verdiği an: hatanın türü ve hangi yüzeyde oluştuğu;</li>
+<li>uygulama dilin, kullandığın platform ve uygulama sürümü;</li>
+<li>cihazında üretilen rastgele bir ölçüm kimliği.</li>
+</ul>
+<p>Ölçüme girmeyenler ise şunlardır:</p>
+<ul>
+<li><strong>semptom, döngü ve ilaç kayıtların bu ölçüme katılmaz</strong>; uyku günlüğün, ruh hâlin, notların ve menopoz evren de katılmaz;</li>
+<li>bir kaydın içeriği — değeri, şiddeti, sayısı, tarihi, süresi, adı veya yazdığın serbest metin — hiçbir koşulda gönderilmez;</li>
+<li>hangi makaleyi okuduğun gönderilmez.</li>
+</ul>
+<p>Ölçüm, cihazında üretilen rastgele bir kimlikle yapılır. Bu kimlik hesabınla, e-posta adresinle veya kullanıcı kimliğinle birleştirilmez; bunları ölçüm sağlayıcısına hiç göndermeyiz.</p>
+<p>Ölçümü bizim adımıza bir hizmet sağlayıcı yapar: <strong>PostHog, Inc.</strong> (San Francisco, Amerika Birleşik Devletleri). Bu sağlayıcı bizim <strong>veri işleyenimizdir</strong>: veriyi yalnızca bizim talimatımızla işler, kendi amaçları için kullanamaz. Aktarılan veri 5. bölümdeki tabloda yer alır. Sağlayıcıyla aramızda bir veri işleme sözleşmesi (DPA) yürürlüktedir.</p>
+<p>Ölçüm verisi yurt dışında işlenir. Veri sağlayıcının Frankfurt (Almanya) bölgesindeki altyapısında <strong>depolanır</strong>, ancak sağlayıcı veriyi hizmeti sunabilmek için <strong>Amerika Birleşik Devletleri dahil olmak üzere Avrupa dışındaki ülkelerden de işler</strong>; bunu sözleşmede açıkça kabul ettik. Bunun hukuki dayanağı <strong>açık rızandır</strong> (KVKK m.9) ve bu rızayı rıza ekranında <strong>kullanım ölçümüne ait ayrı bir madde</strong> ile isteriz. Bu, hesap verilerinin yurt dışında işlenmesi için verdiğin rızadan <strong>ayrı</strong> bir rızadır ve ayrı kaydedilir: ölçüm rızasını vermemen veya sonradan geri alman hesabını ve diğer rızalarını etkilemez.</p>
+<p>Ölçüm kayıtları sınırlı bir süre saklanır ve ardından silinir; süreyi kullandığımız sağlayıcının saklama politikası belirler. Rızanı geri aldığında ölçüm <strong>anında durur</strong> ve yeni kayıt gönderilmez. Sağlayıcı ayrıca kayıtların silinmesi için bir yol sunar, ancak bu silme işlemi için bir süre taahhüdü vermemektedir.</p>
+<p>Ölçümü istediğin an kapatabilirsin: <strong>Profil → Gizlilik ve veri → Rıza tercihleri → Kullanım istatistikleri</strong>. Kapatmak anında etkilidir, uygulamayı yeniden başlatman gerekmez. Kapattığında ölçüm kimliğin de silinir. Sağlık verisi işleme rızanı geri alırsan ölçüm de birlikte kapanır (11. bölüm).</p>
 <h2>6. Yedekleme ve verilerini dışa aktarma</h2>
 <p>Takip kayıtların (semptom, döngü, ilaçlar, uyku…) yalnızca cihazında olduğu için, telefonunu kaybetme riskine karşı Uygulama sana kendi yedeğini alma yolunu sunar.</p>
 <p><strong>Yedeği sen oluşturursun:</strong></p>
@@ -348,7 +381,7 @@
 </ul>
 <h2>7. Yurt dışına aktarım</h2>
 <ul>
-<li>Yurt dışında işlenen veriler hesap verilerin (2.2 bölümü) ve altyapı kayıtlarıdır (2.4 bölümü). Bunlar Frankfurt (Almanya) bölgesinde işlenir. Yedeğini e-postayla gönderirken devreye giren sunucu işlevi aynı bölgeye sabitlenmiştir ve e-posta sağlayıcımız Belçika'dadır (6. bölüm). İkisi de Avrupa Birliği içindedir.</li>
+<li>Yurt dışında işlenen veriler hesap verilerin (2.2 bölümü) ve altyapı kayıtlarıdır (2.4 bölümü). Bunlar Frankfurt (Almanya) bölgesinde işlenir. Yedeğini e-postayla gönderirken devreye giren sunucu işlevi aynı bölgeye sabitlenmiştir ve e-posta sağlayıcımız Belçika'dadır (6. bölüm). İkisi de Avrupa Birliği içindedir. Kullanım ölçümü verisi de yurt dışında işlenir; onun dayanağı rıza ekranındaki <strong>kullanım ölçümüne ait ayrı maddedir</strong> ve bu madde zorunlu değildir (5.1). Hesap verilerin için verdiğin yurt dışı rızası ile ölçüm için verdiğin rıza <strong>ayrı ayrı</strong> alınır ve ayrı ayrı kaydedilir.</li>
 <li>Hukuki dayanak, açık rızandır (KVKK m.9). Hesap verilerinin yurt dışında işlenmesine ilişkin rızanı, rıza ekranında ayrı bir madde olarak isteriz ve kaydını tutarız. Sunucumuz yurt dışında olduğu için bu rızayı geri almanın pratik karşılığı hesabını silmektir (8. bölüm); bunu gizlemiyoruz.</li>
 <li>Muhtemel riskler konusunda bilgilendirme: aktarımın yöneldiği ülkeler için Kurul tarafından ilan edilmiş bir yeterlilik kararı bulunmamaktadır; verin yurt dışında işlendiği sürece haklarını kullanman Türkiye'dekine göre gecikebilir ve Türk makamlarının yurt dışındaki işleme üzerindeki denetim imkânı daha sınırlıdır. Buna karşılık sunucularımızın bulunduğu Almanya ve Belçika, AB veri koruma hukukuna (GDPR) tabidir.</li>
 <li>Bu Uygulamanın niteliği gereği <em>"Lumia'da kayıtlı bir e-posta adresi"</em> bilgisi tek başına bir sağlık beyanı sayılabilir. Aktarılan küme bu yüzden bilinçli olarak asgaride tutulur (hesap verilerin ve rıza kaydın) ve sağlık günlüğün hiçbir koşulda yurt dışına taşınmaz.</li>
@@ -360,6 +393,7 @@
 <li>Oturum ve güvenlik kayıtların (2.4; IP adresin, giriş/kayıt olayları) en çok 90 gün saklanır ve süresi dolanlar düzenli olarak silinir. Altyapı sağlayıcılarının kendi işletim logları ve felaket kurtarma yedekleri bunun dışındadır. Onlar sağlayıcının kendi süresine tabidir (aşağıdaki not).</li>
 <li>Hesabını sildiğinde iki şey birlikte olur: 1. Sunucudaki hesabın ve ona bağlı tüm kayıtlar silinir (tek istisna, bir alt maddedeki rıza kaydıdır), 2. Cihazındaki sağlık veritabanı da yok edilir. Silme işlemi yarıda kesilirse (örneğin uygulamayı kapatırsan) kalan kısım bir sonraki açılışta tamamlanır. İşlem geri alınamaz.</li>
 <li>Rıza kayıtların, hesabın silinmesinden sonra 5 yıl daha saklanır ve sürenin sonunda silinir. Dayanağı m.5/2-e'dir: rızanın alındığını ve geri alındığını, hesap kapandıktan sonra gelebilecek bir iddiaya karşı da ispat edebilmemiz gerekir. Bu kayıtta hiçbir sağlık verin yoktur; hesabın silinmesiyle birlikte e-posta adresin de kayıttan çıkar. Geriye yalnızca rastgele kullanıcı kimliği (UUID) ve rıza üstverisi kalır.</li>
+<li>Kullanım ölçümü kayıtları ölçüm sağlayıcısında sınırlı bir süre saklanır ve ardından silinir; süreyi sağlayıcının saklama politikası belirler. Rızanı geri aldığında yeni kayıt gönderilmez (5.1).</li>
 </ul>
 <h2>9. Verilerin nasıl korunuyor?</h2>
 <p><strong>Cihazındaki veriler için:</strong></p>
@@ -400,6 +434,7 @@
 <li><strong>Rıza kaydın sunucuda kalır</strong> ve üstüne bir <em>"geri aldı"</em> kaydı eklenir (var olan kayıt değiştirilmez). Bunu, rızanı aldığımızı ve geri aldığını gösterebilmek zorunda olduğumuz için yapıyoruz (KVKK m.6/2; 2.0). Bu kaydın içinde hiçbir sağlık verin yoktur.</li>
 <li><strong>Dil tercihin ve uygulama ayarların</strong> (ör. nefes egzersizinin süresi) korunur; bunlar sağlık verisi değildir ve silinmeleri sana bir şey kazandırmaz.</li>
 </ul>
+<p><strong>Kullanım ölçümü rızası ayrıdır:</strong> <strong>kullanım ölçümü rızanı</strong> geri alırsan ölçüm anında durur, bekleyen kayıtlar gönderilmez ve cihazındaki ölçüm kimliği silinir. Hesabın, sağlık kayıtların ve diğer rızaların bundan etkilenmez. <strong>Sağlık verisi işleme rızanı</strong> geri alırsan kullanım ölçümü de birlikte kapanır (5.1).</p>
 <p>Geri alma, geri alma tarihinden önceki hukuka uygun işlemeyi etkilemez. Fikrini tekrar değiştirebilirsin. Geri aldıktan sonra uygulama seni rıza ekranına götürür, istersen oradan yeniden rıza verip baştan başlayabilirsin. Ama silinen kayıtların geri gelmeyecektir.</p>
 <p>Daha önce aldığın yedek dosyaları senin elinde kalır; onları silmek senin sorumluluğunda.</p>
 <h2>12. Değişiklikler</h2>

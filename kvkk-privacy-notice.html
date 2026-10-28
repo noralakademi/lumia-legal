@@ -232,8 +232,9 @@
 <li><strong>Account security and management:</strong> sign-in, email verification, password reset, account deletion. So that we can send these emails in the language you chose, a copy of your language preference is kept in your account metadata (§2.2, §2.3).</li>
 <li><strong>Delivering your backup to you:</strong> creating your encrypted backup file when you ask for it and sending it to your verified email address (§6).</li>
 <li><strong>Meeting legal obligations:</strong> retaining consent records and responding to requests from competent authorities.</li>
+<li><strong>Improving the App:</strong> measuring which screens are used, where in the setup flow you get stuck, and where the App hits errors. This measurement runs only if you separately consent to it (§5.1).</li>
 </ol>
-<p><strong>What we do not do:</strong> We do not use your data for advertising or marketing, we do not sell it to third parties, and we do not build profiles to share with ad networks. The App contains no ad network, analytics tool or crash-reporting tool. The App does not diagnose and does not recommend doses or prescriptions. The emails we send <strong>load no remote images</strong>; meaning we do not track whether you opened them.</p>
+<p><strong>What we do not do:</strong> We do not use your data for advertising or marketing, we do not sell it to third parties, and we do not build profiles to share with ad networks. The App contains no ad network. It does contain a tool that measures how you use the App and where it runs into errors; it runs only with your explicit consent (§5.1). The App does not diagnose and does not recommend doses or prescriptions. The emails we send <strong>load no remote images</strong>; meaning we do not track whether you opened them.</p>
 <h2>4. Lawful bases</h2>
 <p><strong>How we collect it:</strong> your personal data is collected electronically, by wholly or partly automated means, through the App and the server infrastructure attached to it. The lawful basis for each data type is below:</p>
 <table>
@@ -269,6 +270,10 @@
 <td>Session, IP and security logs</td>
 <td>Legitimate interest (Art. 5/2-f); account security</td>
 </tr>
+<tr>
+<td>Usage and error records (§5.1)</td>
+<td>Explicit consent (KVKK Art. 5/1). Explicit consent also for processing abroad (Art. 9; §7). It is not mandatory; you may withdraw your consent at any time (§11)</td>
+</tr>
 </tbody></table>
 <h2>5. Who do we share your data with?</h2>
 <table>
@@ -293,14 +298,42 @@
 <td>Your email address only</td>
 </tr>
 <tr>
+<td><strong>PostHog, Inc.</strong> (usage measurement)</td>
+<td>Measuring how the App is used and where it hits errors</td>
+<td>Only the measurement data listed in §5.1 and the random measurement identifier generated on your device. Your tracking records (§2.1), your account ID and your email address are not sent here. Only if you have given explicit consent</td>
+</tr>
+<tr>
 <td>Competent public authorities</td>
 <td>Where required by law</td>
 <td>Limited to the scope of the request</td>
 </tr>
 </tbody></table>
-<p>Beyond these, we make no transfer to any other third party. No ad network, analytics provider or data broker is used.</p>
+<p>Beyond these, we make no transfer to any other third party. No ad network or data broker is used. The provider we work with for usage measurement is shown in the table above (§5.1).</p>
 <p><strong>Apple is not in this table, because that is not a transfer we make:</strong> if your phone's iCloud/iTunes backup is on, the operating system backs up your health database file to Apple. That depends entirely on your own device setting and is stated plainly in §2.3.</p>
 <p><strong>Honesty note:</strong> the data processing agreements (DPAs) with the providers above are annexes to their terms of service and are <strong>in force</strong> upon acceptance of those terms; there is no separate wet signature.</p>
+<h2>5.1 Usage measurement</h2>
+<p>To be able to improve the App, we measure how you use it: which screens are useful to you, which are never opened, where in the setup steps you get stuck, and where the App runs into errors. This measurement is not required; it runs only if you separately consent to the relevant item on the consent screen. If you do not consent, you keep using the whole App exactly as before and no feature is turned off.</p>
+<p>What reaches us through the measurement is this:</p>
+<ul>
+<li>which screen or tool you opened and which tab you switched to;</li>
+<li>which area a record was created in — for example whether it was a symptom record or a sleep record; <strong>not the record itself</strong>;</li>
+<li>which step of the setup flow you are on (the step number);</li>
+<li>that you opened, completed or abandoned a piece of content or a tool;</li>
+<li>the moment the App hit an error: the type of the error and the surface it happened on;</li>
+<li>your app language, the platform you use and the app version;</li>
+<li>a random measurement identifier generated on your device.</li>
+</ul>
+<p>What does not enter the measurement is this:</p>
+<ul>
+<li><strong>your symptom, cycle and medication records do not take part in this measurement</strong>; neither do your sleep diary, your mood, your notes or your menopause stage;</li>
+<li>the content of a record — its value, severity, count, date, duration, name, or any free text you wrote — is never sent;</li>
+<li>which article you read is not sent.</li>
+</ul>
+<p>The measurement uses a random identifier generated on your device. That identifier is not combined with your account, your email address or your user ID; we never send those to the measurement provider.</p>
+<p>The measurement is carried out on our behalf by a service provider: <strong>PostHog, Inc.</strong> (San Francisco, United States). That provider is our <strong>data processor</strong>: it processes the data only on our instructions and may not use it for its own purposes. The data transferred is shown in the table in §5. A data processing agreement (DPA) is in force between us and the provider.</p>
+<p>The measurement data is processed abroad. The data is <strong>stored</strong> in the provider's infrastructure in the Frankfurt (Germany) region, but the provider also <strong>processes it from countries outside Europe, including the United States</strong>, in order to deliver the service; we expressly agreed to this in the contract. The lawful basis for this is <strong>your explicit consent</strong> (KVKK Art. 9), and we ask for that consent through <strong>a separate item about usage measurement</strong> on the consent screen. This is a <strong>separate</strong> consent from the one you give for your account data to be processed abroad, and it is recorded separately: not giving the measurement consent, or withdrawing it later, does not affect your account or your other consents.</p>
+<p>Measurement records are kept for a limited period and then deleted; the period is set by our provider's retention policy. When you withdraw your consent the measurement <strong>stops immediately</strong> and no new records are sent. The provider also offers a route for deleting records, but gives no commitment as to how long that deletion takes.</p>
+<p>You can turn the measurement off whenever you want: <strong>Profile → Privacy and data → Consent preferences → Usage statistics</strong>. Turning it off takes effect immediately and you do not need to restart the App. When you turn it off, your measurement identifier is deleted as well. If you withdraw your consent to the processing of health data, the measurement is switched off along with it (§11).</p>
 <h2>6. Backups and exporting your data</h2>
 <p>Because your tracking records (symptoms, cycle, medications, sleep…) exist only on your device, the App gives you a way to take your own backup against the risk of losing your phone.</p>
 <p><strong>You create the backup:</strong></p>
@@ -348,7 +381,7 @@
 </ul>
 <h2>7. Cross-border transfer</h2>
 <ul>
-<li>The data processed abroad is your account data (§2.2) and the infrastructure records (§2.4). They are processed in the Frankfurt (Germany) region; the server function that runs when you email yourself a backup is pinned to the same region, and our email provider is in Belgium (§6); both within the European Union.</li>
+<li>The data processed abroad is your account data (§2.2) and the infrastructure records (§2.4). They are processed in the Frankfurt (Germany) region; the server function that runs when you email yourself a backup is pinned to the same region, and our email provider is in Belgium (§6); both within the European Union. Usage measurement data is also processed abroad; its basis is the <strong>separate item about usage measurement</strong> on the consent screen, and that item is not mandatory (§5.1). The cross-border consent you give for your account data and the consent you give for measurement are obtained <strong>separately</strong> and recorded separately.</li>
 <li>The legal basis is your explicit consent (Article 9 of KVKK). We ask for your consent to the processing of your account data abroad as a separate item on the consent screen, and we keep a record of it. Because our server is abroad, the practical way to withdraw this consent is to delete your account (§8); we are not hiding that.</li>
 <li>Disclosure about possible risks: there is no adequacy decision announced by the Board for the countries the transfer is directed to; for as long as your data is processed abroad, exercising your rights may take longer than it would in Türkiye, and the Turkish authorities' ability to supervise processing abroad is more limited. On the other hand, Germany and Belgium, where our servers are located, are subject to EU data protection law (GDPR).</li>
 <li>Given the nature of this App, the mere fact that <em>"an email address is registered with Lumia"</em> may itself amount to a statement about health; that is why the transferred set is deliberately kept minimal (your account data and your consent record), and your health diary is never moved abroad under any circumstances.</li>
@@ -360,6 +393,7 @@
 <li>Your session and security logs (§2.4; your IP address, sign-in and sign-up events) are kept for at most 90 days, and entries past that period are deleted on a regular schedule. The infrastructure providers' own operational logs and disaster-recovery backups are outside this; they follow the provider's own periods (see the note below).</li>
 <li>When you delete your account, two things happen together: 1. Your account on the server and all records linked to it are deleted (the one exception is the consent record, two bullets below); 2. The health database on your device is destroyed as well. If the deletion is interrupted (for example if you close the App), the remaining part is completed the next time the App opens. The operation cannot be undone.</li>
 <li>Your consent records are kept for 5 more years after your account is deleted, and are erased at the end of that period. The basis is Art. 5/2-e: we must be able to prove, even against a claim made after the account is closed, that consent was given and withdrawn. The record holds none of your health data; once the account is deleted it no longer contains your email address; only the random user ID (UUID) and the consent metadata remain.</li>
+<li>Usage measurement records are kept by the measurement provider for a limited period and then deleted; the period is set by the provider's retention policy. Once you withdraw your consent, no new records are sent (§5.1).</li>
 </ul>
 <h2>9. How is your data protected?</h2>
 <p><strong>For the data on your device:</strong></p>
@@ -411,6 +445,7 @@
 <li><strong>Your consent record stays on the server</strong>, and a <em>"withdrawn"</em> entry is added on top of it (the existing record is not altered). We do this because we have to be able to show that you gave consent <strong>and that you withdrew it</strong> (Article 6/2 of KVKK; §2.0). That record contains none of your health data.</li>
 <li><strong>Your language preference and app settings</strong> (for example the length of the breathing exercise) are kept; they are not health data and deleting them would gain you nothing.</li>
 </ul>
+<p><strong>The usage measurement consent is separate:</strong> if you withdraw <strong>your usage measurement consent</strong>, the measurement stops immediately, pending records are not sent, and the measurement identifier on your device is deleted. Your account, your health records and your other consents are not affected. If you withdraw <strong>your consent to health data processing</strong>, usage measurement is switched off along with it (§5.1).</p>
 <p>Withdrawal does not affect processing that was lawful before the date of withdrawal. You can change your mind again. After withdrawing, the App takes you back to the consent screen; if you want, you can consent again from there and start over. But the deleted records will not come back.</p>
 <p>Backup files you took earlier remain in your hands; deleting them is up to you.</p>
 <h2>12. Changes</h2>
